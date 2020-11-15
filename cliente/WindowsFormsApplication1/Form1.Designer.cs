@@ -43,7 +43,11 @@
             this.Consulta_2 = new System.Windows.Forms.RadioButton();
             this.Consulta_3 = new System.Windows.Forms.RadioButton();
             this.desconectar = new System.Windows.Forms.Button();
+            this.conectB = new System.Windows.Forms.Button();
+            this.connlbl = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -206,11 +210,41 @@
             this.desconectar.UseVisualStyleBackColor = true;
             this.desconectar.Click += new System.EventHandler(this.desconectar_Click);
             // 
+            // conectB
+            // 
+            this.conectB.Location = new System.Drawing.Point(510, 52);
+            this.conectB.Name = "conectB";
+            this.conectB.Size = new System.Drawing.Size(117, 36);
+            this.conectB.TabIndex = 8;
+            this.conectB.Text = "Dame Conectados";
+            this.conectB.UseVisualStyleBackColor = true;
+            this.conectB.Click += new System.EventHandler(this.conectB_Click);
+            // 
+            // connlbl
+            // 
+            this.connlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.connlbl.Location = new System.Drawing.Point(469, 113);
+            this.connlbl.Name = "connlbl";
+            this.connlbl.Size = new System.Drawing.Size(195, 144);
+            this.connlbl.TabIndex = 9;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(501, 139);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(300, 454);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 562);
+            this.ClientSize = new System.Drawing.Size(1157, 710);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.connlbl);
+            this.Controls.Add(this.conectB);
             this.Controls.Add(this.desconectar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -221,6 +255,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +278,9 @@
         private System.Windows.Forms.Button LOG_IN;
         private System.Windows.Forms.RadioButton Consulta_1;
         private System.Windows.Forms.Button desconectar;
+        private System.Windows.Forms.Button conectB;
+        private System.Windows.Forms.Label connlbl;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

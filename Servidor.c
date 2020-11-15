@@ -64,7 +64,11 @@ int DamePosicion (ListaConectados *lista,char nombre[20])
 }
 
 int DameSocket (ListaConectados *lista, char nombre[20]){
+<<<<<<< HEAD
 	//Devuelve el socket o -1 si no esta en la lista
+=======
+	//Devuelve el socket o -1 si no est￯﾿ﾡ en la lista
+>>>>>>> dev-v2
 	int i=0;
 	int encontrado=0;
 	while ((i< lista->num) && !encontrado)
@@ -151,7 +155,11 @@ void signIn(MYSQL *conn ,char respuesta[1000],char nombre [20],char contra [20])
 	
 }
 
+<<<<<<< HEAD
 void  LogIn(MYSQL *conn ,char respuesta[1000],char nombre [20],char contra [20],ListaConectados *miLista, int sock_conn )
+=======
+void  LogIn(MYSQL *conn ,char respuesta[1000],char nombre [20],char contra [20],ListaConectados *miLista )
+>>>>>>> dev-v2
 {
 	MYSQL_RES *resultado;
 	MYSQL_ROW row;
@@ -181,8 +189,13 @@ void  LogIn(MYSQL *conn ,char respuesta[1000],char nombre [20],char contra [20],
 		}
 		else {
 			
+<<<<<<< HEAD
 			//int s=DameSocket(miLista,nombre);
 			int conect=Pon(miLista,nombre,sock_conn);
+=======
+			int s=DameSocket(miLista,nombre);
+			int conect=Pon(miLista,nombre,s);
+>>>>>>> dev-v2
 			if (conect==0) //todo correcto y deja conectar al usuario solicitante
 			{
 				printf("Bienvenido de nuevo %s al Gran Casino UPC\n",nombre);
@@ -432,7 +445,11 @@ void *AtenderCliente(void *socket)
 		
 		else if (codigo ==2){ //iniciar sesion
 			pthread_mutex_lock (&mutex);
+<<<<<<< HEAD
 			LogIn (conn,respuesta,nombre,contra,&miLista,sock_conn);
+=======
+			LogIn (conn,respuesta,nombre,contra,&miLista);
+>>>>>>> dev-v2
 			pthread_mutex_unlock (&mutex);
 			
 		}

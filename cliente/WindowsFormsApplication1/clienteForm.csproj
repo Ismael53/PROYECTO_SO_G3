@@ -53,16 +53,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Black_Jack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Black_Jack.Designer.cs">
+      <DependentUpon>Black_Jack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModoJuego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModoJuego.Designer.cs">
+      <DependentUpon>ModoJuego.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla_inicio.Designer.cs">
+      <DependentUpon>Pantalla_inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Poker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Poker.Designer.cs">
+      <DependentUpon>Poker.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Ruleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruleta.Designer.cs">
+      <DependentUpon>Ruleta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Black_Jack.resx">
+      <DependentUpon>Black_Jack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModoJuego.resx">
+      <DependentUpon>ModoJuego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_inicio.resx">
+      <DependentUpon>Pantalla_inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Poker.resx">
+      <DependentUpon>Poker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +107,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ruleta.resx">
+      <DependentUpon>Ruleta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,6 +119,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ruleta.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poker.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackjack.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

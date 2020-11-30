@@ -5,4 +5,4 @@
 # Versión 3 generada por Alberto Cruz
 # Versión 3 verificada por Pol Martorell
 # Versión 4 generada por Ismael Humbert
-# Versión 4 generada por Alberto Cruz
+# Versión 4 verificada por Alberto Cruz

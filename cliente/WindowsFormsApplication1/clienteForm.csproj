@@ -35,6 +35,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -53,27 +57,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Black_Jack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Black_Jack.Designer.cs">
+      <DependentUpon>Black_Jack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Poker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Poker.Designer.cs">
+      <DependentUpon>Poker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main_Display.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Display.Designer.cs">
+      <DependentUpon>Main_Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantalla_inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla_inicio.Designer.cs">
+      <DependentUpon>Pantalla_inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ruleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruleta.Designer.cs">
+      <DependentUpon>Ruleta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Black_Jack.resx">
+      <DependentUpon>Black_Jack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Poker.resx">
+      <DependentUpon>Poker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_Display.resx">
+      <DependentUpon>Main_Display.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantalla_inicio.resx">
+      <DependentUpon>Pantalla_inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Ruleta.resx">
+      <DependentUpon>Ruleta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -83,6 +123,48 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ruleta.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poker.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackjack.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\architecture-1846684_1920.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\distorsionada.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_good.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_nice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_conn1.0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_diss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading_50.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capturamesa_2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_good_200.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

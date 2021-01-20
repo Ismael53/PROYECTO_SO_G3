@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.IP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.desconn = new System.Windows.Forms.Button();
             this.loading_text = new System.Windows.Forms.Label();
+            this.music = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1004, 15);
+            this.label1.Location = new System.Drawing.Point(992, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 13);
             this.label1.TabIndex = 0;
@@ -71,18 +72,17 @@
             // 
             // IP
             // 
-            this.IP.Location = new System.Drawing.Point(1027, 12);
+            this.IP.Location = new System.Drawing.Point(1015, 12);
             this.IP.Name = "IP";
             this.IP.Size = new System.Drawing.Size(130, 20);
             this.IP.TabIndex = 2;
             this.IP.Text = "192.168.56.102";
-            this.IP.TextChanged += new System.EventHandler(this.IP_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(718, 288);
+            this.label6.Location = new System.Drawing.Point(841, 321);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 14;
@@ -91,7 +91,7 @@
             // mostrar_contrasenya
             // 
             this.mostrar_contrasenya.AutoSize = true;
-            this.mostrar_contrasenya.Location = new System.Drawing.Point(697, 287);
+            this.mostrar_contrasenya.Location = new System.Drawing.Point(821, 320);
             this.mostrar_contrasenya.Name = "mostrar_contrasenya";
             this.mostrar_contrasenya.Size = new System.Drawing.Size(15, 14);
             this.mostrar_contrasenya.TabIndex = 12;
@@ -101,19 +101,19 @@
             // Consulta_1
             // 
             this.Consulta_1.AutoSize = true;
-            this.Consulta_1.Location = new System.Drawing.Point(697, 510);
+            this.Consulta_1.Location = new System.Drawing.Point(688, 574);
             this.Consulta_1.Name = "Consulta_1";
             this.Consulta_1.Size = new System.Drawing.Size(75, 17);
             this.Consulta_1.TabIndex = 13;
             this.Consulta_1.TabStop = true;
             this.Consulta_1.Text = "Consulta 1";
             this.Consulta_1.UseVisualStyleBackColor = true;
-            this.Consulta_1.CheckedChanged += new System.EventHandler(this.Consulta_1_CheckedChanged);
+            this.Consulta_1.Visible = false;
             // 
             // LOG_IN
             // 
             this.LOG_IN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LOG_IN.Location = new System.Drawing.Point(697, 397);
+            this.LOG_IN.Location = new System.Drawing.Point(821, 430);
             this.LOG_IN.Name = "LOG_IN";
             this.LOG_IN.Size = new System.Drawing.Size(232, 40);
             this.LOG_IN.TabIndex = 12;
@@ -124,7 +124,7 @@
             // SIGN_IN
             // 
             this.SIGN_IN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SIGN_IN.Location = new System.Drawing.Point(697, 332);
+            this.SIGN_IN.Location = new System.Drawing.Point(821, 365);
             this.SIGN_IN.Name = "SIGN_IN";
             this.SIGN_IN.Size = new System.Drawing.Size(232, 40);
             this.SIGN_IN.TabIndex = 11;
@@ -134,51 +134,51 @@
             // 
             // pwd
             // 
-            this.pwd.Location = new System.Drawing.Point(697, 261);
+            this.pwd.Location = new System.Drawing.Point(821, 294);
             this.pwd.Name = "pwd";
             this.pwd.Size = new System.Drawing.Size(232, 20);
             this.pwd.TabIndex = 7;
+            this.pwd.Text = "admin";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(693, 238);
+            this.label3.Location = new System.Drawing.Point(817, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Consulta_2
             // 
             this.Consulta_2.AutoSize = true;
-            this.Consulta_2.Location = new System.Drawing.Point(778, 510);
+            this.Consulta_2.Location = new System.Drawing.Point(769, 574);
             this.Consulta_2.Name = "Consulta_2";
             this.Consulta_2.Size = new System.Drawing.Size(75, 17);
             this.Consulta_2.TabIndex = 7;
             this.Consulta_2.TabStop = true;
             this.Consulta_2.Text = "Consulta 2";
             this.Consulta_2.UseVisualStyleBackColor = true;
-            this.Consulta_2.CheckedChanged += new System.EventHandler(this.Consulta_2_CheckedChanged);
+            this.Consulta_2.Visible = false;
             // 
             // Consulta_3
             // 
             this.Consulta_3.AutoSize = true;
-            this.Consulta_3.Location = new System.Drawing.Point(859, 510);
+            this.Consulta_3.Location = new System.Drawing.Point(850, 574);
             this.Consulta_3.Name = "Consulta_3";
             this.Consulta_3.Size = new System.Drawing.Size(75, 17);
             this.Consulta_3.TabIndex = 8;
             this.Consulta_3.TabStop = true;
             this.Consulta_3.Text = "Consulta 3";
             this.Consulta_3.UseVisualStyleBackColor = true;
-            this.Consulta_3.CheckedChanged += new System.EventHandler(this.Consulta_3_CheckedChanged);
+            this.Consulta_3.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(693, 168);
+            this.label2.Location = new System.Drawing.Point(817, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 1;
@@ -187,44 +187,47 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(778, 481);
+            this.button2.Location = new System.Drawing.Point(769, 545);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Enviar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // nombre
             // 
-            this.nombre.Location = new System.Drawing.Point(697, 191);
+            this.nombre.Location = new System.Drawing.Point(821, 224);
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(232, 20);
             this.nombre.TabIndex = 3;
+            this.nombre.Text = "admin";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Location = new System.Drawing.Point(997, 214);
+            this.dataGridView1.Location = new System.Drawing.Point(970, 574);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(187, 223);
+            this.dataGridView1.Size = new System.Drawing.Size(187, 33);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.Visible = false;
             // 
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(1163, 12);
+            this.button4.Location = new System.Drawing.Point(1151, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 25);
             this.button4.TabIndex = 16;
@@ -236,7 +239,7 @@
             // 
             this.connect_status.BackColor = System.Drawing.Color.Red;
             this.connect_status.ForeColor = System.Drawing.Color.White;
-            this.connect_status.Location = new System.Drawing.Point(1163, 43);
+            this.connect_status.Location = new System.Drawing.Point(1151, 43);
             this.connect_status.Name = "connect_status";
             this.connect_status.Size = new System.Drawing.Size(75, 20);
             this.connect_status.TabIndex = 12;
@@ -247,11 +250,11 @@
             // 
             this.jugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jugar.ForeColor = System.Drawing.Color.White;
-            this.jugar.Location = new System.Drawing.Point(997, 464);
+            this.jugar.Location = new System.Drawing.Point(220, 430);
             this.jugar.Name = "jugar";
-            this.jugar.Size = new System.Drawing.Size(187, 40);
+            this.jugar.Size = new System.Drawing.Size(200, 40);
             this.jugar.TabIndex = 11;
-            this.jugar.Text = "Jugar";
+            this.jugar.Text = "START";
             this.jugar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.jugar.UseVisualStyleBackColor = true;
             this.jugar.Visible = false;
@@ -261,10 +264,11 @@
             // 
             this.panel1.Controls.Add(this.num_usuarios);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(970, 168);
+            this.panel1.Location = new System.Drawing.Point(943, 528);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 40);
             this.panel1.TabIndex = 20;
+            this.panel1.Visible = false;
             // 
             // num_usuarios
             // 
@@ -304,33 +308,47 @@
             // 
             // desconn
             // 
+            this.desconn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.desconn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.desconn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desconn.Image = global::WindowsFormsApplication1.Properties.Resources.icon_diss;
+            this.desconn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desconn.ForeColor = System.Drawing.Color.White;
             this.desconn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.desconn.Location = new System.Drawing.Point(120, 553);
+            this.desconn.Location = new System.Drawing.Point(0, 687);
             this.desconn.Margin = new System.Windows.Forms.Padding(0);
             this.desconn.Name = "desconn";
-            this.desconn.Size = new System.Drawing.Size(232, 40);
+            this.desconn.Size = new System.Drawing.Size(1250, 39);
             this.desconn.TabIndex = 18;
             this.desconn.Text = "Desconectar";
             this.desconn.UseVisualStyleBackColor = true;
+            this.desconn.Visible = false;
             this.desconn.Click += new System.EventHandler(this.desconn_Click);
             // 
             // loading_text
             // 
-            this.loading_text.AutoSize = true;
             this.loading_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loading_text.Location = new System.Drawing.Point(277, 457);
+            this.loading_text.Location = new System.Drawing.Point(70, 490);
             this.loading_text.Name = "loading_text";
-            this.loading_text.Size = new System.Drawing.Size(0, 13);
+            this.loading_text.Size = new System.Drawing.Size(500, 13);
             this.loading_text.TabIndex = 23;
+            this.loading_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // music
+            // 
+            this.music.AutoSize = true;
+            this.music.Location = new System.Drawing.Point(714, 624);
+            this.music.Name = "music";
+            this.music.Size = new System.Drawing.Size(54, 17);
+            this.music.TabIndex = 24;
+            this.music.Text = "Music";
+            this.music.UseVisualStyleBackColor = true;
+            this.music.CheckedChanged += new System.EventHandler(this.music_CheckedChanged);
             // 
             // Pantalla_inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 711);
+            this.ClientSize = new System.Drawing.Size(1250, 726);
+            this.Controls.Add(this.music);
             this.Controls.Add(this.loading_text);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
@@ -354,10 +372,12 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(1250, 750);
             this.MinimumSize = new System.Drawing.Size(1250, 726);
             this.Name = "Pantalla_inicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla de inicio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -397,6 +417,7 @@
         private System.Windows.Forms.Label num_usuarios;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label loading_text;
+        private System.Windows.Forms.CheckBox music;
     }
 }
 

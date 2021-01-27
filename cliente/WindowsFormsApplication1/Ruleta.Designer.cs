@@ -91,19 +91,20 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cantidad_apostada = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.total_deposito = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.time_label = new System.Windows.Forms.Label();
-            this.ficha_tb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Borrar_todo = new System.Windows.Forms.Button();
-            this.Borrar_anterior = new System.Windows.Forms.Button();
-            this.borrar_selec = new System.Windows.Forms.Button();
-            this.Enviar_apuesta = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel_apuestas = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ficha_tb = new System.Windows.Forms.TextBox();
+            this.borrar_selec = new System.Windows.Forms.Button();
+            this.Borrar_anterior = new System.Windows.Forms.Button();
+            this.Borrar_todo = new System.Windows.Forms.Button();
+            this.total_deposito = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Enviar_apuesta = new System.Windows.Forms.Button();
+            this.cantidad_apostada = new System.Windows.Forms.TextBox();
             this.chat_background.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -162,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_apuestas.SuspendLayout();
             this.SuspendLayout();
             // 
             // hide_chat
@@ -230,7 +232,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::WindowsFormsApplication1.Properties.Resources.ficha_1000_e_p;
             this.pictureBox8.Location = new System.Drawing.Point(839, 490);
             this.pictureBox8.Name = "pictureBox8";
@@ -241,7 +243,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::WindowsFormsApplication1.Properties.Resources.ficha_500_e_p;
             this.pictureBox7.Location = new System.Drawing.Point(719, 490);
             this.pictureBox7.Name = "pictureBox7";
@@ -252,7 +254,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::WindowsFormsApplication1.Properties.Resources.ficha_100_e_p;
             this.pictureBox6.Location = new System.Drawing.Point(599, 490);
             this.pictureBox6.Name = "pictureBox6";
@@ -263,7 +265,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::WindowsFormsApplication1.Properties.Resources.ficha_50_e_p;
             this.pictureBox5.Location = new System.Drawing.Point(479, 490);
             this.pictureBox5.Name = "pictureBox5";
@@ -274,7 +276,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(359, 490);
             this.pictureBox4.Name = "pictureBox4";
@@ -285,7 +287,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::WindowsFormsApplication1.Properties.Resources.ficha_5_e_p;
             this.pictureBox3.Location = new System.Drawing.Point(239, 490);
             this.pictureBox3.Name = "pictureBox3";
@@ -296,7 +298,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WindowsFormsApplication1.Properties.Resources.ficha_1_e_p;
             this.pictureBox2.Location = new System.Drawing.Point(119, 490);
             this.pictureBox2.Name = "pictureBox2";
@@ -845,153 +847,184 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.ruleta_estatica;
-            this.pictureBox1.Location = new System.Drawing.Point(368, 4);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.ruleta_estatica_sin_fondo;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(185, 185);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // cantidad_apostada
-            // 
-            this.cantidad_apostada.Location = new System.Drawing.Point(39, 34);
-            this.cantidad_apostada.Name = "cantidad_apostada";
-            this.cantidad_apostada.Size = new System.Drawing.Size(100, 20);
-            this.cantidad_apostada.TabIndex = 88;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Aqua;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(145, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 89;
-            this.label1.Text = "Cantidad apostada";
-            // 
-            // total_deposito
-            // 
-            this.total_deposito.Location = new System.Drawing.Point(609, 34);
-            this.total_deposito.Name = "total_deposito";
-            this.total_deposito.Size = new System.Drawing.Size(100, 20);
-            this.total_deposito.TabIndex = 90;
-            this.total_deposito.TextChanged += new System.EventHandler(this.total_deposito_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Aqua;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(733, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 91;
-            this.label2.Text = "Total disponible";
-            // 
-            // time_label
-            // 
-            this.time_label.AutoSize = true;
-            this.time_label.Location = new System.Drawing.Point(36, 78);
-            this.time_label.Name = "time_label";
-            this.time_label.Size = new System.Drawing.Size(0, 13);
-            this.time_label.TabIndex = 92;
-            // 
-            // ficha_tb
-            // 
-            this.ficha_tb.Location = new System.Drawing.Point(609, 78);
-            this.ficha_tb.Name = "ficha_tb";
-            this.ficha_tb.Size = new System.Drawing.Size(100, 20);
-            this.ficha_tb.TabIndex = 93;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Aqua;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(733, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "Ficha seleccionada";
-            // 
-            // Borrar_todo
-            // 
-            this.Borrar_todo.Location = new System.Drawing.Point(859, 76);
-            this.Borrar_todo.Name = "Borrar_todo";
-            this.Borrar_todo.Size = new System.Drawing.Size(75, 23);
-            this.Borrar_todo.TabIndex = 95;
-            this.Borrar_todo.Text = "Borrar todo";
-            this.Borrar_todo.UseVisualStyleBackColor = true;
-            this.Borrar_todo.Click += new System.EventHandler(this.Borrar_todo_Click);
-            // 
-            // Borrar_anterior
-            // 
-            this.Borrar_anterior.Location = new System.Drawing.Point(859, 105);
-            this.Borrar_anterior.Name = "Borrar_anterior";
-            this.Borrar_anterior.Size = new System.Drawing.Size(75, 39);
-            this.Borrar_anterior.TabIndex = 96;
-            this.Borrar_anterior.Text = "Borrar anterior";
-            this.Borrar_anterior.UseVisualStyleBackColor = true;
-            this.Borrar_anterior.Click += new System.EventHandler(this.Borrar_anterior_Click);
-            // 
-            // borrar_selec
-            // 
-            this.borrar_selec.Location = new System.Drawing.Point(859, 150);
-            this.borrar_selec.Name = "borrar_selec";
-            this.borrar_selec.Size = new System.Drawing.Size(75, 23);
-            this.borrar_selec.TabIndex = 97;
-            this.borrar_selec.Text = "Borrar";
-            this.borrar_selec.UseVisualStyleBackColor = true;
-            this.borrar_selec.Click += new System.EventHandler(this.borrar_selec_Click);
-            // 
-            // Enviar_apuesta
-            // 
-            this.Enviar_apuesta.Location = new System.Drawing.Point(39, 105);
-            this.Enviar_apuesta.Name = "Enviar_apuesta";
-            this.Enviar_apuesta.Size = new System.Drawing.Size(75, 39);
-            this.Enviar_apuesta.TabIndex = 98;
-            this.Enviar_apuesta.Text = "Enviar apuesta";
-            this.Enviar_apuesta.UseVisualStyleBackColor = true;
-            this.Enviar_apuesta.Click += new System.EventHandler(this.Enviar_apuesta_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(155, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 99;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(259, 118);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(897, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 39);
             this.button1.TabIndex = 101;
             this.button1.Text = "Abandonar Partida";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // panel_apuestas
+            // 
+            this.panel_apuestas.Controls.Add(this.label6);
+            this.panel_apuestas.Controls.Add(this.label2);
+            this.panel_apuestas.Controls.Add(this.label1);
+            this.panel_apuestas.Controls.Add(this.ficha_tb);
+            this.panel_apuestas.Controls.Add(this.borrar_selec);
+            this.panel_apuestas.Controls.Add(this.Borrar_anterior);
+            this.panel_apuestas.Controls.Add(this.Borrar_todo);
+            this.panel_apuestas.Controls.Add(this.total_deposito);
+            this.panel_apuestas.Controls.Add(this.label5);
+            this.panel_apuestas.Controls.Add(this.label4);
+            this.panel_apuestas.Controls.Add(this.Enviar_apuesta);
+            this.panel_apuestas.Controls.Add(this.cantidad_apostada);
+            this.panel_apuestas.Location = new System.Drawing.Point(266, 12);
+            this.panel_apuestas.Name = "panel_apuestas";
+            this.panel_apuestas.Size = new System.Drawing.Size(610, 158);
+            this.panel_apuestas.TabIndex = 102;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(318, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 16);
+            this.label6.TabIndex = 118;
+            this.label6.Text = "Ficha seleccionada";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(175, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 16);
+            this.label2.TabIndex = 117;
+            this.label2.Text = "Total disponible";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 16);
+            this.label1.TabIndex = 116;
+            this.label1.Text = "Cantidad apostada";
+            // 
+            // ficha_tb
+            // 
+            this.ficha_tb.BackColor = System.Drawing.Color.White;
+            this.ficha_tb.Location = new System.Drawing.Point(321, 53);
+            this.ficha_tb.Name = "ficha_tb";
+            this.ficha_tb.ReadOnly = true;
+            this.ficha_tb.Size = new System.Drawing.Size(130, 20);
+            this.ficha_tb.TabIndex = 114;
+            // 
+            // borrar_selec
+            // 
+            this.borrar_selec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrar_selec.ForeColor = System.Drawing.Color.Red;
+            this.borrar_selec.Location = new System.Drawing.Point(460, 79);
+            this.borrar_selec.Name = "borrar_selec";
+            this.borrar_selec.Size = new System.Drawing.Size(130, 40);
+            this.borrar_selec.TabIndex = 113;
+            this.borrar_selec.Text = "Borrar actual";
+            this.borrar_selec.UseVisualStyleBackColor = true;
+            this.borrar_selec.Click += new System.EventHandler(this.borrar_selec_Click_1);
+            // 
+            // Borrar_anterior
+            // 
+            this.Borrar_anterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Borrar_anterior.ForeColor = System.Drawing.Color.Red;
+            this.Borrar_anterior.Location = new System.Drawing.Point(321, 79);
+            this.Borrar_anterior.Name = "Borrar_anterior";
+            this.Borrar_anterior.Size = new System.Drawing.Size(130, 40);
+            this.Borrar_anterior.TabIndex = 112;
+            this.Borrar_anterior.Text = "Borrar anterior";
+            this.Borrar_anterior.UseVisualStyleBackColor = true;
+            this.Borrar_anterior.Click += new System.EventHandler(this.Borrar_anterior_Click_1);
+            // 
+            // Borrar_todo
+            // 
+            this.Borrar_todo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Borrar_todo.ForeColor = System.Drawing.Color.Red;
+            this.Borrar_todo.Location = new System.Drawing.Point(178, 79);
+            this.Borrar_todo.Name = "Borrar_todo";
+            this.Borrar_todo.Size = new System.Drawing.Size(130, 40);
+            this.Borrar_todo.TabIndex = 111;
+            this.Borrar_todo.Text = "Borrar todo";
+            this.Borrar_todo.UseVisualStyleBackColor = true;
+            this.Borrar_todo.Click += new System.EventHandler(this.Borrar_todo_Click_1);
+            // 
+            // total_deposito
+            // 
+            this.total_deposito.BackColor = System.Drawing.Color.White;
+            this.total_deposito.Location = new System.Drawing.Point(178, 53);
+            this.total_deposito.Name = "total_deposito";
+            this.total_deposito.ReadOnly = true;
+            this.total_deposito.Size = new System.Drawing.Size(130, 20);
+            this.total_deposito.TabIndex = 109;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(223, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 20);
+            this.label5.TabIndex = 108;
+            this.label5.Text = "Gestión de apuestas";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LimeGreen;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(482, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.TabIndex = 103;
+            // 
+            // Enviar_apuesta
+            // 
+            this.Enviar_apuesta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Enviar_apuesta.ForeColor = System.Drawing.Color.LimeGreen;
+            this.Enviar_apuesta.Location = new System.Drawing.Point(25, 79);
+            this.Enviar_apuesta.Name = "Enviar_apuesta";
+            this.Enviar_apuesta.Size = new System.Drawing.Size(130, 40);
+            this.Enviar_apuesta.TabIndex = 102;
+            this.Enviar_apuesta.Text = "Enviar apuesta";
+            this.Enviar_apuesta.UseVisualStyleBackColor = true;
+            this.Enviar_apuesta.Click += new System.EventHandler(this.Enviar_apuesta_Click_1);
+            // 
+            // cantidad_apostada
+            // 
+            this.cantidad_apostada.BackColor = System.Drawing.Color.White;
+            this.cantidad_apostada.Location = new System.Drawing.Point(25, 53);
+            this.cantidad_apostada.Name = "cantidad_apostada";
+            this.cantidad_apostada.ReadOnly = true;
+            this.cantidad_apostada.Size = new System.Drawing.Size(130, 20);
+            this.cantidad_apostada.TabIndex = 100;
             // 
             // Ruleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.tablero_o;
+            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.back_casino;
             this.ClientSize = new System.Drawing.Size(984, 711);
+            this.Controls.Add(this.panel_apuestas);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.Enviar_apuesta);
-            this.Controls.Add(this.borrar_selec);
-            this.Controls.Add(this.Borrar_anterior);
-            this.Controls.Add(this.Borrar_todo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.ficha_tb);
-            this.Controls.Add(this.time_label);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.total_deposito);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cantidad_apostada);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -1113,8 +1146,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_apuestas.ResumeLayout(false);
+            this.panel_apuestas.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1182,18 +1216,19 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TextBox cantidad_apostada;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox total_deposito;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label time_label;
-        private System.Windows.Forms.TextBox ficha_tb;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Borrar_todo;
-        private System.Windows.Forms.Button Borrar_anterior;
-        private System.Windows.Forms.Button borrar_selec;
-        private System.Windows.Forms.Button Enviar_apuesta;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel_apuestas;
+        private System.Windows.Forms.TextBox total_deposito;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Enviar_apuesta;
+        private System.Windows.Forms.TextBox cantidad_apostada;
+        private System.Windows.Forms.TextBox ficha_tb;
+        private System.Windows.Forms.Button borrar_selec;
+        private System.Windows.Forms.Button Borrar_anterior;
+        private System.Windows.Forms.Button Borrar_todo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
     }
 }

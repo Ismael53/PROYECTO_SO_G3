@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.TextBox();
             this.account_panel = new System.Windows.Forms.Panel();
+            this.estadisticas = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.delete_panel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -115,7 +116,6 @@
             this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 21;
             this.label6.Text = "Check Password";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // mostrar_contrasenya
             // 
@@ -177,6 +177,7 @@
             // 
             // account_panel
             // 
+            this.account_panel.Controls.Add(this.estadisticas);
             this.account_panel.Controls.Add(this.label5);
             this.account_panel.Controls.Add(this.ingresar_btn);
             this.account_panel.Controls.Add(this.deposito_tb);
@@ -187,6 +188,18 @@
             this.account_panel.Name = "account_panel";
             this.account_panel.Size = new System.Drawing.Size(300, 400);
             this.account_panel.TabIndex = 22;
+            // 
+            // estadisticas
+            // 
+            this.estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.estadisticas.ForeColor = System.Drawing.Color.LimeGreen;
+            this.estadisticas.Location = new System.Drawing.Point(34, 310);
+            this.estadisticas.Name = "estadisticas";
+            this.estadisticas.Size = new System.Drawing.Size(232, 40);
+            this.estadisticas.TabIndex = 23;
+            this.estadisticas.Text = "Accede a tus estadísticas";
+            this.estadisticas.UseVisualStyleBackColor = true;
+            this.estadisticas.Click += new System.EventHandler(this.estadisticas_Click);
             // 
             // label5
             // 
@@ -266,5 +279,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel delete_panel;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button estadisticas;
     }
 }

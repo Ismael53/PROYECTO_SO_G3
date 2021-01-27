@@ -643,6 +643,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_casino {
+            get {
+                object obj = ResourceManager.GetObject("back_casino", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bf {
             get {
                 object obj = ResourceManager.GetObject("bf", resourceCulture);
@@ -796,6 +806,16 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap fondo_mano {
             get {
                 object obj = ResourceManager.GetObject("fondo_mano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap graph {
+            get {
+                object obj = ResourceManager.GetObject("graph", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -996,6 +1016,16 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap ruleta_estatica {
             get {
                 object obj = ResourceManager.GetObject("ruleta_estatica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ruleta_estatica_sin_fondo {
+            get {
+                object obj = ResourceManager.GetObject("ruleta_estatica_sin_fondo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -24,6 +24,7 @@ namespace WindowsFormsApplication1
 
         Table pokerTable;
         PlayerList playerList;
+        PlayerList mejores_manos;
         int cont_invitados = 0;
         string anfitrion;
         int acabar = 0;
@@ -42,10 +43,11 @@ namespace WindowsFormsApplication1
         string jugada;
         int posicion_lista = 0;
         string table_cards;
-        int flop_river_turn=0;
+        int flop_river_turn = 0; 
+        int round = 0;
 
         public string enviar_cartas;
-
+        public string fin_partida;
 
         public Poker()
         {
@@ -55,7 +57,6 @@ namespace WindowsFormsApplication1
         private void poker_Load(object sender, EventArgs e)
         {
             Pantalla_inicio get = new Pantalla_inicio();
-            label1.Text = "Poker Partida:" + partida;
             this.BackColor = Color.FromArgb(32, 30, 45);
             main_chat.BackColor = Color.FromArgb(11, 7, 17);
             main_chat.Size = new System.Drawing.Size(882, 110);
@@ -106,51 +107,48 @@ namespace WindowsFormsApplication1
                 Hand player2 = playerList[1].getHand();
                 Card card3 = player2.getCard(0);
                 Card card4 = player2.getCard(1);
-                drawCard(card3, player2_card1);
-                drawCard(card4, player2_card2);
+                //drawCard(card3, player2_card1);
+                //drawCard(card4, player2_card2);
             }
             if(cont_invitados>1)
             {
             Hand player3 = playerList[2].getHand();
             Card card5 = player3.getCard(0);
             Card card6 = player3.getCard(1);
-            drawCard(card5, player3_card1);
-            drawCard(card6, player3_card2);
+            //drawCard(card5, player3_card1);
+            //drawCard(card6, player3_card2);
             }
             if(cont_invitados>2)
             {
             Hand player4 = playerList[3].getHand();
             Card card7 = player4.getCard(0);
             Card card8 = player4.getCard(1);
-            drawCard(card7, player4_card1);
-            drawCard(card8, player4_card2);
+            //drawCard(card7, player4_card1);
+            //drawCard(card8, player4_card2);
             }
             if (cont_invitados > 3)
             {
                 Hand player5 = playerList[4].getHand();
                 Card card9 = player5.getCard(0);
                 Card card10 = player5.getCard(1);
-                drawCard(card9, player5_card1);
-                drawCard(card10, player5_card2);
+                //drawCard(card9, player5_card1);
+                //drawCard(card10, player5_card2);
             }
             
-            if (actual_player == usuario)
-                rol.Text = rol.Text + "dealer";
             if (big_blind == usuario)
             {
                 mi_apuesta = amount_big;
                 apuesta_actual_player1.Text = Convert.ToString(mi_apuesta);
-                rol.Text = rol.Text + "big";
             }
             if (small_blind == usuario)
             {
-                rol.Text = rol.Text + "small";
                 mi_apuesta = amount_small;
                 apuesta_actual_player1.Text = Convert.ToString(mi_apuesta);
             }
 
             pot = amount_small + amount_big;
-            Pot.Text = Convert.ToString(pot);
+            total_pot.Text = Convert.ToString(pot);
+            total_pot.SelectionAlignment = HorizontalAlignment.Center;
             last_bet_amount = amount_big;        
             
             
@@ -174,6 +172,10 @@ namespace WindowsFormsApplication1
         public string DarJugada()
         {
             return jugada;
+        }
+        public string DarFinPartida()
+        {
+            return fin_partida;
         }
 
         public string DarTablero()
@@ -235,8 +237,8 @@ namespace WindowsFormsApplication1
                         posicion_lista = 0;
                     if (counter == 0)
                     {
-                        drawCard(playerList[posicion_lista].getHand().getCard(0), player2_card1);
-                        drawCard(playerList[posicion_lista].getHand().getCard(1), player2_card2);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(0), player2_card1);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(1), player2_card2);
                         name_player2.Text = playerList[posicion_lista].name;
                         amount_player2.Text = Convert.ToString(playerList[posicion_lista].deposito);
                         name_player2.SelectionAlignment = HorizontalAlignment.Center;
@@ -245,8 +247,8 @@ namespace WindowsFormsApplication1
                     }
                     else if (counter == 1)
                     {
-                        drawCard(playerList[posicion_lista].getHand().getCard(0), player3_card1);
-                        drawCard(playerList[posicion_lista].getHand().getCard(1), player3_card2);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(0), player3_card1);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(1), player3_card2);
                         name_player3.Text = playerList[posicion_lista].name;
                         amount_player3.Text = Convert.ToString(playerList[posicion_lista].deposito);
                         name_player3.SelectionAlignment = HorizontalAlignment.Center;
@@ -254,8 +256,8 @@ namespace WindowsFormsApplication1
                     }
                     else if (counter == 2)
                     {
-                        drawCard(playerList[posicion_lista].getHand().getCard(0), player4_card1);
-                        drawCard(playerList[posicion_lista].getHand().getCard(1), player4_card2);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(0), player4_card1);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(1), player4_card2);
                         name_player4.Text = playerList[posicion_lista].name;
                         amount_player4.Text = Convert.ToString(playerList[posicion_lista].deposito);
                         name_player4.SelectionAlignment = HorizontalAlignment.Center;
@@ -263,8 +265,8 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        drawCard(playerList[posicion_lista].getHand().getCard(0), player5_card1);
-                        drawCard(playerList[posicion_lista].getHand().getCard(1), player5_card2);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(0), player5_card1);
+                        //drawCard(playerList[posicion_lista].getHand().getCard(1), player5_card2);
                         name_player5.Text = playerList[posicion_lista].name;
                         amount_player5.Text = Convert.ToString(playerList[posicion_lista].deposito);
                         name_player5.SelectionAlignment = HorizontalAlignment.Center;
@@ -279,13 +281,13 @@ namespace WindowsFormsApplication1
                 small_blind = cartas[pos + 7];
                 if (actual_player == usuario)
                 {
-                    rol.Text = rol.Text + "dealer";
+                    
                     
 
                 }
                 if (big_blind == usuario)
                 {
-                    rol.Text = rol.Text + "big";
+                    
                     apostar(amount_big);
                     apuesta_actual_player1.Text = Convert.ToString(amount_big);
                     deposito_display.Text = Convert.ToString(deposito);
@@ -294,7 +296,7 @@ namespace WindowsFormsApplication1
                 }
                 if (small_blind == usuario)
                 {
-                    rol.Text = rol.Text + "small";
+                    
                     apostar(amount_small);
                     apuesta_actual_player1.Text = Convert.ToString(amount_small);
                     deposito_display.Text = Convert.ToString(deposito);
@@ -305,7 +307,8 @@ namespace WindowsFormsApplication1
                 resaltar_actual_player(actual_player);
                 playing = dealer;
                 pot = amount_small + amount_big;
-                Pot.Text = Convert.ToString(pot);
+                total_pot.Text = Convert.ToString(pot);
+                total_pot.SelectionAlignment = HorizontalAlignment.Center;
                 last_bet_amount = amount_big;
             }
             
@@ -316,21 +319,39 @@ namespace WindowsFormsApplication1
         {
 
             if (jugada == 0)
-                last_move.Text = Convert.ToString(playerList[playing]) + " falls";
+            {
+                
+                playerList.Remove(playerList[playing]);
+                cont_invitados--;
+                if (playing < cont_invitados)
+                    playing = playing - 1;
+                else
+                    playing = 0;
+                update_actual(playerList[playing].name, apuesta, deposito);
+            }
             else
             {
 
                 last_bet_amount = apuesta;
                 pot = pot + last_bet_amount;
-                Pot.Text = pot.ToString();
+                total_pot.Text = Convert.ToString(pot);
+                total_pot.SelectionAlignment = HorizontalAlignment.Center;
                 update_actual(playerList[playing].name, apuesta, deposito);
             }
              if (playing < cont_invitados)
                 playing = playing + 1;
             else
                 playing = 0;
-            actual_player = playerList[playing].name;
-            resaltar_actual_player(actual_player);
+             if (playerList.Count > 1)
+             {
+                 actual_player = playerList[playing].name;
+                 resaltar_actual_player(actual_player);
+             }
+             else
+             {
+                 fin_partida = "20/" + Convert.ToString(partida) + "/1/"+playerList[0].name;
+                 message_chat(DarFinPartida());
+             }
         }
         public void anadirPlayers(PlayerList lista, string nombre,int cantidad)
         {
@@ -347,6 +368,8 @@ namespace WindowsFormsApplication1
                     player2_card1.Visible = true;
                     player2_card2.Visible = true;
                     apuesta_actual_player2.Visible = true;
+                    apuesta_2.Visible = true;
+                    credit_2.Visible = true;
                     name_player2.Text = nombre;
                     name_player2.SelectionAlignment = HorizontalAlignment.Center;
                     amount_player2.Text = Convert.ToString(cantidad);
@@ -360,6 +383,8 @@ namespace WindowsFormsApplication1
                     player3_card1.Visible = true;
                     player3_card2.Visible = true;
                     apuesta_actual_player3.Visible = true;
+                    apuesta_3.Visible = true;
+                    credit_3.Visible = true;
                     name_player3.Text = nombre;
                     name_player3.SelectionAlignment = HorizontalAlignment.Center;
                     amount_player3.Text = Convert.ToString(cantidad);
@@ -373,6 +398,8 @@ namespace WindowsFormsApplication1
                     player4_card1.Visible = true;
                     player4_card2.Visible = true;
                     apuesta_actual_player4.Visible = true;
+                    apuesta_4.Visible = true;
+                    credit_4.Visible = true;
                     name_player4.Text = nombre;
                     name_player4.SelectionAlignment = HorizontalAlignment.Center;
                     amount_player4.Text = Convert.ToString(cantidad);
@@ -386,6 +413,8 @@ namespace WindowsFormsApplication1
                     player5_card1.Visible = true;
                     player5_card2.Visible = true;
                     apuesta_actual_player5.Visible = true;
+                    apuesta_5.Visible = true;
+                    credit_5.Visible = true;
                     name_player5.Text = nombre;
                     name_player5.SelectionAlignment = HorizontalAlignment.Center;
                     amount_player5.Text = Convert.ToString(cantidad);
@@ -717,15 +746,23 @@ namespace WindowsFormsApplication1
             retirar = true;
             jugada = "17/" + Convert.ToString(partida) + "/" + usuario + "/0";
             message_chat(DarJugada());
+            round++;
         }
         private void send_flop()
         {
             Card flop1 = pokerTable.getDeck().Deal();
             Card flop2 = pokerTable.getDeck().Deal();
             Card flop3 = pokerTable.getDeck().Deal();
+            for (int i = 0; i < playerList.Count(); i++)
+            {
+                playerList[i].AddToHand(flop1);
+                playerList[i].AddToHand(flop2);
+                playerList[i].AddToHand(flop3);
+            }
             drawCard(flop1, card1);
             drawCard(flop2, card2);
             drawCard(flop3, card3);
+            
             table_cards = "19/" + Convert.ToString(partida) + "/" + Convert.ToString(flop_river_turn) + "/" + flop1.numero + "/" + flop1.tipo + "/" + flop2.numero + "/" + flop2.tipo + "/" + flop3.numero + "/" + flop3.tipo;
             flop_river_turn++;
             message_chat(DarTablero());
@@ -733,8 +770,27 @@ namespace WindowsFormsApplication1
         private void send_river()
         {
             Card river = pokerTable.getDeck().Deal();
+            for (int i = 0; i < playerList.Count(); i++)
+            {
+                playerList[i].AddToHand(river);
+                
+            }
             drawCard(river, card4);
             table_cards = "19/" + Convert.ToString(partida) + "/" + Convert.ToString(flop_river_turn) + "/" + river.numero + "/" + river.tipo;
+            flop_river_turn++;
+            message_chat(DarTablero());
+
+        }
+        private void send_turn()
+        {
+            Card turn = pokerTable.getDeck().Deal();
+            for (int i = 0; i < playerList.Count(); i++)
+            {
+                playerList[i].AddToHand(turn);
+
+            }
+            drawCard(turn, card5);
+            table_cards = "19/" + Convert.ToString(partida) + "/" + Convert.ToString(flop_river_turn) + "/" + turn.numero + "/" + turn.tipo;
             flop_river_turn++;
             message_chat(DarTablero());
 
@@ -755,21 +811,183 @@ namespace WindowsFormsApplication1
                 Card river = new Card(Convert.ToInt32(table_cards[0]), Convert.ToInt32(table_cards[1]));
                 drawCard(river, card4);
             }
+            if (round == 2)
+            {
+                Card turn = new Card(Convert.ToInt32(table_cards[0]), Convert.ToInt32(table_cards[1]));
+                drawCard(turn, card5);
+            }
  
+        }
+        public void resaltar_ganador(Player player)
+        {
+            if (user_name.Text == player.name)
+            {
+                user_name.BackColor = Color.Gold;
+                user_name.ForeColor = Color.Black;
+                
+ 
+            }
+            else if (name_player2.Text == player.name)
+            {
+                image_player2.BackColor = Color.Gold;
+                name_player2.BackColor = Color.Gold;
+                name_player2.ForeColor = Color.Black;
+            }
+            else if (name_player3.Text == player.name)
+            {
+                image_player3.BackColor = Color.Gold;
+                name_player3.BackColor = Color.Gold;
+                name_player3.ForeColor = Color.Black;
+            }
+            else if (name_player4.Text == player.name)
+            {
+                image_player4.BackColor = Color.Gold;
+                name_player4.BackColor = Color.Gold;
+                name_player4.ForeColor = Color.Black;
+            }
+            else if (name_player5.Text == player.name)
+            {
+                image_player5.BackColor = Color.Gold;
+                name_player5.BackColor = Color.Gold;
+                name_player5.ForeColor = Color.Black;
+            } 
+            
+ 
+        }
+        public void finalizar_partida()
+        {
+            
+            PlayerList copia = new PlayerList(playerList);
+            mejores_manos = QuickSortBestHand(copia);
+            List<int> ganadores=new List<int>();
+            for (int i = 0; i < mejores_manos.Count; i++)
+            {
+                for (int j = 0; j < playerList.Count; j++)
+                    if (playerList[j] == mejores_manos[i])
+                    {
+                        ganadores.Add(j);
+                    }
+                if (HandCombination.getBestHand(new Hand(mejores_manos[i].getHand())) != HandCombination.getBestHand(new Hand(mejores_manos[i + 1].getHand())))
+                    break;
+            }
+
+            fin_partida = "20/" + Convert.ToString(partida) + "/" + Convert.ToString(ganadores.Count());
+            for (int i = 0; i < ganadores.Count(); i++)
+            {
+                fin_partida = fin_partida + "/" + playerList[ganadores[i]].name;
+            }
+            message_chat(DarFinPartida());                 
+            
+ 
+        }
+
+        public void acabar_partida(int ganadores, string[] nombre_ganadores)
+        {
+            for (int j = 0; j < playerList.Count(); j++)
+            {
+                if(playerList[j].name==name_player2.Text)
+                {
+                    drawCard(playerList[j].getHand().getCard(0), player2_card1);
+                    drawCard(playerList[j].getHand().getCard(1), player2_card2);
+                }
+                if (playerList[j].name == name_player3.Text)
+                {
+                    drawCard(playerList[j].getHand().getCard(0), player3_card1);
+                    drawCard(playerList[j].getHand().getCard(1), player3_card2);
+                }
+                if (playerList[j].name == name_player4.Text)
+                {
+                    drawCard(playerList[j].getHand().getCard(0), player4_card1);
+                    drawCard(playerList[j].getHand().getCard(1), player4_card2);
+                }
+                if (playerList[j].name == name_player5.Text)
+                {
+                    drawCard(playerList[j].getHand().getCard(0), player5_card1);
+                    drawCard(playerList[j].getHand().getCard(1), player5_card2);
+                }
+            }
+            for (int i = 0; i < ganadores; i++)
+            {
+                for (int z = 0; z < playerList.Count(); z++)
+                {
+                    if (playerList[z].name == nombre_ganadores[ganadores-1])
+                    {
+                        resaltar_ganador(playerList[z]);
+                        //System.Threading.Thread.Sleep(5000);
+                    }
+                }
+            }
+            
+            MessageBox.Show("La partida ha terminado, se cerrará la sesión en breves instantes");
+            this.Close();
         }
         private void check_call_Click(object sender, EventArgs e)
         {
-            if (usuario == playerList[dealer].name && last_bet_amount == mi_apuesta && flop_river_turn == 0 || usuario == playerList[dealer].name && last_bet_amount < deposito && last_bet_amount != 10 && flop_river_turn == 0)
+            if (usuario == playerList[dealer].name && last_bet_amount == mi_apuesta && flop_river_turn == 0 && round!=0|| usuario == playerList[dealer].name && last_bet_amount < deposito && round!=0 && flop_river_turn == 0)
             {
-                situation.Text = "show flop";
-                send_flop();
+                if (last_bet_amount < deposito)
+                {
+                    apostar(last_bet_amount);
+                    apuesta_actual_player1.Text = Convert.ToString(last_bet_amount);
+                    apuesta_actual_player1.SelectionAlignment = HorizontalAlignment.Center;
+                    round = 0;
+                    last_bet_amount = 0;
+                    send_flop();
+                }
+                else 
+                {
+                    MessageBox.Show("Crédito insuficiente, hacer ingreso en perfil");
+                }
 
                 
             }
-            else if (usuario == playerList[dealer].name && last_bet_amount == mi_apuesta && flop_river_turn == 1 || usuario == playerList[dealer].name && last_bet_amount < deposito && last_bet_amount != 10 && flop_river_turn == 1)
+            else if (usuario == playerList[dealer].name && last_bet_amount == mi_apuesta && flop_river_turn == 1 && round != 0 || usuario == playerList[dealer].name && last_bet_amount < deposito && round != 0 && flop_river_turn == 1)
             {
-                situation.Text = "show flop";
-                send_flop();
+                if (last_bet_amount < deposito)
+                {
+                    apostar(last_bet_amount);
+                    apuesta_actual_player1.Text = Convert.ToString(last_bet_amount);
+                    apuesta_actual_player1.SelectionAlignment = HorizontalAlignment.Center;
+                    round = 0;
+                    last_bet_amount = 0;
+                    send_river();
+                }
+                else
+                {
+                    MessageBox.Show("Crédito insuficiente, hacer ingreso en perfil");
+                }
+
+            }
+            else if (usuario == playerList[dealer].name && last_bet_amount == mi_apuesta && flop_river_turn == 2 && round != 0 || usuario == playerList[dealer].name && last_bet_amount < deposito && round != 0 && flop_river_turn == 2)
+            {
+                if (last_bet_amount < deposito)
+                {
+                    apostar(last_bet_amount);
+                    apuesta_actual_player1.Text = Convert.ToString(last_bet_amount);
+                    apuesta_actual_player1.SelectionAlignment = HorizontalAlignment.Center;
+                    round = 0;
+                    last_bet_amount = 0;
+                    send_turn();
+                }
+                else
+                {
+                    MessageBox.Show("Crédito insuficiente, hacer ingreso en perfil");
+                }
+
+            }
+            else if (usuario == playerList[dealer].name && last_bet_amount == mi_apuesta && flop_river_turn == 3 && round != 0 || usuario == playerList[dealer].name && last_bet_amount < deposito && round != 0 && flop_river_turn == 3)
+            {
+                if (last_bet_amount < deposito)
+                {
+                    apostar(last_bet_amount);
+                    apuesta_actual_player1.Text = Convert.ToString(last_bet_amount);
+                    apuesta_actual_player1.SelectionAlignment = HorizontalAlignment.Center;
+                    finalizar_partida();
+                }
+                else
+                {
+                    MessageBox.Show("Crédito insuficiente, hacer ingreso en perfil");
+                }
 
             }
 
@@ -779,6 +997,7 @@ namespace WindowsFormsApplication1
                 {
                     jugada = "17/" + Convert.ToString(partida) + "/" + usuario + "/1/0/" + Convert.ToString(deposito);
                     message_chat(DarJugada());
+                    round++;
                 }
                 else if (last_bet_amount < deposito)
                 {
@@ -787,7 +1006,11 @@ namespace WindowsFormsApplication1
                     apuesta_actual_player1.SelectionAlignment = HorizontalAlignment.Center;
                     jugada = "17/" + Convert.ToString(partida) + "/" + usuario + "/2" + "/" + Convert.ToString(last_bet_amount) + "/" + Convert.ToString(deposito);
                     message_chat(DarJugada());
-
+                    round++;
+                }
+                else
+                {
+                    MessageBox.Show("Crédito insuficiente, hacer ingreso en perfil");
                 }
             }
             
@@ -806,7 +1029,7 @@ namespace WindowsFormsApplication1
                 int rise = deposito * increase_amount.Value / 10;
                 amount.Text = rise.ToString();                
                 amount.BackColor = Color.Black;
-                
+                round++;
 
             }
             else
@@ -820,6 +1043,40 @@ namespace WindowsFormsApplication1
             int rise = deposito * increase_amount.Value / 10;
             amount.Text = rise.ToString();
         }
+        
+        PlayerList QuickSortBestHand(PlayerList myPlayers)
+        {
+            Player pivot;
+            Random ran = new Random();
+
+            if (myPlayers.Count() <= 1)
+                return myPlayers;
+            pivot = myPlayers[ran.Next(myPlayers.Count())];
+            myPlayers.Remove(pivot);
+
+            var less = new PlayerList();
+            var greater = new PlayerList();
+            // Assign values to less or greater list
+            foreach (Player player in myPlayers)
+            {
+                if (HandCombination.getBestHand(new Hand(player.getHand())) > HandCombination.getBestHand(new Hand(pivot.getHand())))
+                {
+                    greater.Add(player);
+                }
+                else if (HandCombination.getBestHand(new Hand(player.getHand())) <= HandCombination.getBestHand(new Hand(pivot.getHand())))
+                {
+                    less.Add(player);
+                }
+            }
+            // Recurse for less and greaterlists
+            var list = new PlayerList();
+            list.AddRange(QuickSortBestHand(greater));
+            list.Add(pivot);
+            list.AddRange(QuickSortBestHand(less));
+            return list;
+        }
+
+        
 
         
         

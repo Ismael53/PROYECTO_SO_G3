@@ -43,6 +43,7 @@ namespace WindowsFormsApplication1
             chat_background.BackColor = Color.FromArgb(11, 7, 17);
             main_chat.Text = "";
             total_deposito.Text = deposito + "€";
+            panel_apuestas.BackColor = Color.FromArgb(175, Color.Black);
 
         }
         public int enviarChat()
@@ -354,6 +355,7 @@ namespace WindowsFormsApplication1
 
 
         //anular apuestas
+        /*
         private void Borrar_todo_Click(object sender, EventArgs e)
         {
             if (!enviado)
@@ -379,6 +381,8 @@ namespace WindowsFormsApplication1
             }
         }
 
+         */
+        /*
         private void Borrar_anterior_Click(object sender, EventArgs e)
         {
             if (!enviado)
@@ -398,6 +402,7 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("No hay apuestas todavía");
             }
         }
+        */
 
         public int eliminarApuesta(string apuesta)
         {
@@ -1514,7 +1519,7 @@ namespace WindowsFormsApplication1
                 }
             }
         }
-
+/*
         private void Enviar_apuesta_Click(object sender, EventArgs e)
         {
             if (!enviado)
@@ -1549,7 +1554,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Apuesta ya enviada");
             }
         }
-
+*/
         public void AbandonarPartida(int hack)
         {
             if (hack == 0)//
@@ -1572,6 +1577,106 @@ namespace WindowsFormsApplication1
                 apuesta_string(mensaje);
             }
 
+
+        }
+
+        private void Enviar_apuesta_Click_1(object sender, EventArgs e)
+        {
+            if (!enviado)
+            {
+                string MessageBoxContent = "Está seguro que quiere hacer esta apuesta?";
+                string MessageBoxTitle = "Finalizar apuesta";
+                DialogResult result = MessageBox.Show(MessageBoxContent, MessageBoxTitle, MessageBoxButtons.YesNo);
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        enviado = true;
+                        int i = 0;
+                        string apuestaE;
+                        string mensajeA = "13/2/" + partida + "/" + usuario + "/" + total_apostado + "/";
+                        while (i < Napuestas)
+                        {
+                            apuestaE = apuestas[i] + "/" + CantidadApostada[i] + "/";
+                            mensajeA = mensajeA + apuestaE;
+                            i = i + 1;
+                        }
+                        apuesta_string(mensajeA);
+                        label4.Text = "Apuesta enviada";
+                        break;
+                    case DialogResult.No:
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Apuesta ya enviada");
+            }
+        }
+
+        private void Borrar_todo_Click_1(object sender, EventArgs e)
+        {
+            if (!enviado)
+            {
+                if (Napuestas > 0)
+                {
+                    for (int i = 0; i < Napuestas; i++)
+                    {
+                        apuestas[i] = "";
+                        CantidadApostada[i] = 0;
+                        casillas[i].Image = null;
+                    }
+                    Napuestas = 0;
+                    deposito = deposito + total_apostado;
+                    total_deposito.Text = Convert.ToInt32(deposito) + "€";
+                    total_apostado = 0;
+                    cantidad_apostada.Text = total_apostado + "€";
+                }
+                else
+                {
+                    MessageBox.Show("No hay apuestas todavía");
+                }
+            }
+        }
+
+        private void Borrar_anterior_Click_1(object sender, EventArgs e)
+        {
+            if (!enviado)
+            {
+                if (Napuestas > 0)
+                {
+                    deposito = deposito + CantidadApostada[Napuestas - 1];
+                    total_deposito.Text = Convert.ToInt32(deposito) + "€";
+                    apuestas[Napuestas - 1] = "";
+                    total_apostado = total_apostado - CantidadApostada[Napuestas - 1];
+                    cantidad_apostada.Text = total_apostado + "€";
+                    CantidadApostada[Napuestas - 1] = 0;
+                    casillas[Napuestas - 1].Image = null;
+                    Napuestas = Napuestas - 1;
+                }
+                else
+                    MessageBox.Show("No hay apuestas todavía");
+            }
+
+        }
+
+        private void borrar_selec_Click_1(object sender, EventArgs e)
+        {
+            if (!enviado)
+            {
+                if (Napuestas > 0)
+                {
+                    deposito = deposito + CantidadApostada[Napuestas - 1];
+                    total_deposito.Text = Convert.ToInt32(deposito) + "€";
+                    apuestas[Napuestas - 1] = "";
+                    total_apostado = total_apostado - CantidadApostada[Napuestas - 1];
+                    cantidad_apostada.Text = total_apostado + "€";
+                    CantidadApostada[Napuestas - 1] = 0;
+                    casillas[Napuestas - 1].Image = null;
+                    Napuestas = Napuestas - 1;
+                }
+                else
+                    MessageBox.Show("No hay apuestas todavía");
+            }
 
         }
 

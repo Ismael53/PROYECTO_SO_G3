@@ -49,18 +49,18 @@
             this.panelchildForm = new System.Windows.Forms.Panel();
             this.Welcome = new System.Windows.Forms.Panel();
             this.anadir_player = new System.Windows.Forms.Button();
+            this.player_5 = new System.Windows.Forms.RichTextBox();
             this.eliminar_player = new System.Windows.Forms.Button();
+            this.player_4 = new System.Windows.Forms.RichTextBox();
+            this.player_3 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.player_2 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.player_1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.partida_nueva = new System.Windows.Forms.Label();
-            this.player_5 = new System.Windows.Forms.RichTextBox();
-            this.player_3 = new System.Windows.Forms.RichTextBox();
-            this.player_4 = new System.Windows.Forms.RichTextBox();
-            this.player_2 = new System.Windows.Forms.RichTextBox();
-            this.player_1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -333,6 +333,7 @@
             this.panelchildForm.Name = "panelchildForm";
             this.panelchildForm.Size = new System.Drawing.Size(1000, 721);
             this.panelchildForm.TabIndex = 1;
+            this.panelchildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelchildForm_Paint);
             // 
             // Welcome
             // 
@@ -369,6 +370,21 @@
             this.anadir_player.UseVisualStyleBackColor = true;
             this.anadir_player.Click += new System.EventHandler(this.anadir_player_Click);
             // 
+            // player_5
+            // 
+            this.player_5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.player_5.BackColor = System.Drawing.Color.Black;
+            this.player_5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.player_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player_5.ForeColor = System.Drawing.Color.White;
+            this.player_5.Location = new System.Drawing.Point(34, 327);
+            this.player_5.Name = "player_5";
+            this.player_5.ReadOnly = true;
+            this.player_5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.player_5.Size = new System.Drawing.Size(250, 40);
+            this.player_5.TabIndex = 9;
+            this.player_5.Text = "";
+            // 
             // eliminar_player
             // 
             this.eliminar_player.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -382,6 +398,36 @@
             this.eliminar_player.Text = "Eliminar";
             this.eliminar_player.UseVisualStyleBackColor = true;
             this.eliminar_player.Click += new System.EventHandler(this.eliminar_player_Click);
+            // 
+            // player_4
+            // 
+            this.player_4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.player_4.BackColor = System.Drawing.Color.Black;
+            this.player_4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.player_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player_4.ForeColor = System.Drawing.Color.White;
+            this.player_4.Location = new System.Drawing.Point(34, 265);
+            this.player_4.Name = "player_4";
+            this.player_4.ReadOnly = true;
+            this.player_4.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.player_4.Size = new System.Drawing.Size(250, 40);
+            this.player_4.TabIndex = 7;
+            this.player_4.Text = "";
+            // 
+            // player_3
+            // 
+            this.player_3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.player_3.BackColor = System.Drawing.Color.Black;
+            this.player_3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.player_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player_3.ForeColor = System.Drawing.Color.White;
+            this.player_3.Location = new System.Drawing.Point(34, 203);
+            this.player_3.Name = "player_3";
+            this.player_3.ReadOnly = true;
+            this.player_3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.player_3.Size = new System.Drawing.Size(250, 40);
+            this.player_3.TabIndex = 8;
+            this.player_3.Text = "";
             // 
             // label5
             // 
@@ -405,6 +451,21 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Jugador 4";
             // 
+            // player_2
+            // 
+            this.player_2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.player_2.BackColor = System.Drawing.Color.Black;
+            this.player_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.player_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player_2.ForeColor = System.Drawing.Color.White;
+            this.player_2.Location = new System.Drawing.Point(34, 141);
+            this.player_2.Name = "player_2";
+            this.player_2.ReadOnly = true;
+            this.player_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.player_2.Size = new System.Drawing.Size(250, 40);
+            this.player_2.TabIndex = 6;
+            this.player_2.Text = "";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -415,6 +476,21 @@
             this.label2.Size = new System.Drawing.Size(73, 16);
             this.label2.TabIndex = 31;
             this.label2.Text = "Jugador3";
+            // 
+            // player_1
+            // 
+            this.player_1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.player_1.BackColor = System.Drawing.Color.Black;
+            this.player_1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.player_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player_1.ForeColor = System.Drawing.Color.White;
+            this.player_1.Location = new System.Drawing.Point(34, 79);
+            this.player_1.Name = "player_1";
+            this.player_1.ReadOnly = true;
+            this.player_1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.player_1.Size = new System.Drawing.Size(250, 40);
+            this.player_1.TabIndex = 5;
+            this.player_1.Text = "";
             // 
             // label1
             // 
@@ -449,81 +525,11 @@
             this.partida_nueva.TabIndex = 23;
             this.partida_nueva.Text = "Partida Nueva";
             // 
-            // player_5
-            // 
-            this.player_5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.player_5.BackColor = System.Drawing.Color.Black;
-            this.player_5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.player_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player_5.ForeColor = System.Drawing.Color.White;
-            this.player_5.Location = new System.Drawing.Point(34, 327);
-            this.player_5.Name = "player_5";
-            this.player_5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.player_5.Size = new System.Drawing.Size(250, 40);
-            this.player_5.TabIndex = 9;
-            this.player_5.Text = "";
-            // 
-            // player_3
-            // 
-            this.player_3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.player_3.BackColor = System.Drawing.Color.Black;
-            this.player_3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.player_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player_3.ForeColor = System.Drawing.Color.White;
-            this.player_3.Location = new System.Drawing.Point(34, 203);
-            this.player_3.Name = "player_3";
-            this.player_3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.player_3.Size = new System.Drawing.Size(250, 40);
-            this.player_3.TabIndex = 8;
-            this.player_3.Text = "";
-            // 
-            // player_4
-            // 
-            this.player_4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.player_4.BackColor = System.Drawing.Color.Black;
-            this.player_4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.player_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player_4.ForeColor = System.Drawing.Color.White;
-            this.player_4.Location = new System.Drawing.Point(34, 265);
-            this.player_4.Name = "player_4";
-            this.player_4.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.player_4.Size = new System.Drawing.Size(250, 40);
-            this.player_4.TabIndex = 7;
-            this.player_4.Text = "";
-            // 
-            // player_2
-            // 
-            this.player_2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.player_2.BackColor = System.Drawing.Color.Black;
-            this.player_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.player_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player_2.ForeColor = System.Drawing.Color.White;
-            this.player_2.Location = new System.Drawing.Point(34, 141);
-            this.player_2.Name = "player_2";
-            this.player_2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.player_2.Size = new System.Drawing.Size(250, 40);
-            this.player_2.TabIndex = 6;
-            this.player_2.Text = "";
-            // 
-            // player_1
-            // 
-            this.player_1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.player_1.BackColor = System.Drawing.Color.Black;
-            this.player_1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.player_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.player_1.ForeColor = System.Drawing.Color.White;
-            this.player_1.Location = new System.Drawing.Point(34, 79);
-            this.player_1.Name = "player_1";
-            this.player_1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.player_1.Size = new System.Drawing.Size(250, 40);
-            this.player_1.TabIndex = 5;
-            this.player_1.Text = "";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Capturamesa_2;
-            this.pictureBox1.Location = new System.Drawing.Point(972, 555);
+            this.pictureBox1.Location = new System.Drawing.Point(972, 631);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(758, 238);
             this.pictureBox1.TabIndex = 4;

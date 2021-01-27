@@ -332,6 +332,7 @@ namespace WindowsFormsApplication1
                 borrar_invitados();
                 anadir = true;
                 profile_open = false;
+                anadir_partida.Clear();
 
             }
             perfil.Hide();
@@ -549,6 +550,12 @@ namespace WindowsFormsApplication1
                         if (VectorPartidas_poker[i] == partida)
                         {
                             formpartidas_poker[i].Close();
+                            for (int j = i; j < form_poker; j++)
+                            {
+                                formpartidas_poker[j] = formpartidas_poker[j + 1];
+                                VectorPartidas_poker[j] = VectorPartidas_poker[j + 1];
+                            }
+                            form_poker--;
                         }
                     }
                     break;
@@ -569,11 +576,18 @@ namespace WindowsFormsApplication1
                         if (VectorPartidas_ruleta[i] == partida)
                         {
                             formpartidas_ruleta[i].Close();
+                            for (int j = i - 1; j < form_ruleta; j++)
+                            {
+                                formpartidas_ruleta[j] = formpartidas_ruleta[j + 1];
+                                VectorPartidas_ruleta[j] = VectorPartidas_ruleta[j + 1];
+                            }
+                            form_ruleta--;
                         }
                     }
                     break;
             }
             borrar_invitados();
+            anadir = true;
         }
 
         private void partidas_button_Click(object sender, EventArgs e)
@@ -727,6 +741,7 @@ namespace WindowsFormsApplication1
             }
         }
         public void Recibir_jugadores_poker(int numero, string[] jugadores, int partida)
+            // Recibimos el numero de jugadores de la partida, sus nombres y el ID de partida. Enviamos a la partida especificada estos datos.
         {
             for (int i = 0; i < form_poker; i++)
             {
@@ -738,6 +753,7 @@ namespace WindowsFormsApplication1
             }
         }
         public void iniciar_partida_poker(int partida)
+            // Recibimos del servidor la notificación para que empieze la partida de poker especificada en el parámetro recibido
         {
             for (int i = 0; i < form_poker; i++)
             {
@@ -749,6 +765,7 @@ namespace WindowsFormsApplication1
             }
         }
         public void enviar_cartas_poker(int partida, string[] cartas)
+            // El anfitrion envía a todos los jugadores cuál será las cartas que tendrá cada uno
         {
             for (int i = 0; i < form_poker; i++)
             {
@@ -761,6 +778,7 @@ namespace WindowsFormsApplication1
 
         }
         public void enviar_jugada_poker(int partida, string jugador, int jugada,int apuesta,int deposito)
+            // Cada jugador 
         {
             for (int i = 0; i < form_poker; i++)
             {
@@ -781,6 +799,19 @@ namespace WindowsFormsApplication1
                     break;
                 }
             }
+        }
+        public void finalizar_partida_poker(int partida, int num_ganadores, string[] ganadores)
+        {
+            for (int i = 0; i < form_poker; i++)
+            {
+                if (VectorPartidas_poker[i] == partida)
+                {
+                    formpartidas_poker[i].acabar_partida(num_ganadores, ganadores);
+                    break;
+                }
+            }
+            Finalizar_Partida(0, partida);
+ 
         }
     
         public void resultado_Ruleta(int partida, string mensaje, int ganancias)
@@ -1012,6 +1043,19 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Ningún usuario añadido");
             }
+        }
+        public void EnviarRespuestaConsultaApuesta(int total, int acertadas, int porcentaje, string apuesta)
+        {
+            perfil.EnviarRespuestaConsultaApuesta(total, acertadas, porcentaje, apuesta);
+        }
+
+        private void panelchildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        public void EnviarBeneficio(int beneficios)
+        {
+            perfil.EnviarBeneficio(beneficios);
         }
     }
 }

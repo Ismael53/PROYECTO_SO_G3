@@ -9,3 +9,4 @@
 # Versión 5 generada por Alberto Cruz
 # Versión 5 verificada por Pol Martorell
 # Versión final generada por Pol Martorell
+# Versión final verificada por Ismael Humbert

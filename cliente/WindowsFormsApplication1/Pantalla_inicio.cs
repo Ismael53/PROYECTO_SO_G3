@@ -27,9 +27,11 @@ namespace WindowsFormsApplication1
         delegate void DelegadoParaIniciarPartidaPoker(int partida);
         delegate void DelegadoParaEnviarJugadaPoker(int partida, string jugador, int jugada,int apuesta,int deposito);
         delegate void DelegadoParaEnviarCartasMesaPoker(int partida, int ronda, string[] cartas_mesa);
+        delegate void DelegadoParaFinalizarPartidaPoker(int partida, int num_ganadores, string[] ganadores);
         delegate void DelegadoParaEmpezarPartida(int juego, int partida);
         delegate void DelegadoParaFinalizarPartida(int juego, int partida);
         delegate void DelegadoParaRecibirPartidas(string[] ID, string[] tipo_juego);
+        delegate void DelegadoConsultaApuesta(int total, int acertadas, string apuesta);
         //delegate void DelegadoTimerRuleta(int juego, int partida);
         delegate void DelegadoRespuesta(string mensaje);
         delegate void DelegadoDeposito(int Deposito);
@@ -37,6 +39,7 @@ namespace WindowsFormsApplication1
         delegate void DelegadoResultadoRuleta(int partida13, string mensaje13, int ganancias);
         delegate void DelegadoParaRespuestaBaja(int hack, string mensaje);
         delegate void DelegadoParaAbandonarPartida(int juego, int partida, int hack);
+        delegate void DelegadoParaConsultaBeneficio(int beneficios);
         bool Loged = false;
         bool Connect = false;
         int puerto = 9000;
@@ -192,6 +195,10 @@ namespace WindowsFormsApplication1
         {
             main.enviar_table_cards_poker(partida, ronda, cartas_mesa);
         }
+        public void FinalizarPartidaPoker(int partida, int num_ganadores, string[] ganadores)
+        {
+            main.finalizar_partida_poker(partida, num_ganadores, ganadores);
+        }
         public void actualizar_deposito(int Deposito)
         {
             main.deposito = Deposito;
@@ -212,6 +219,15 @@ namespace WindowsFormsApplication1
         public void AbandonarPartida(int juego, int partida, int hack)
         {
             main.AbandonarPartida(juego, partida, hack);
+        }
+        public void EnviarRespuestaConsulta(int total, int acertadas, string apuesta)
+        {
+            int porcentaje = 100 * acertadas / total;
+            main.EnviarRespuestaConsultaApuesta(total, acertadas, porcentaje, apuesta);
+        }
+        public void EnviarBeneficio(int beneficios)
+        {
+            main.EnviarBeneficio(beneficios);
         }
         private void AtenderServidor() // Threat para atender al servidor
         {
@@ -463,7 +479,7 @@ namespace WindowsFormsApplication1
                             }
                             else if (hack8 == 5) // se notifica al anfitrion que inicie la partida de poker
                             {
-                                System.Threading.Thread.Sleep(500);
+                                System.Threading.Thread.Sleep(2000);
                                 int juego8_5 = Convert.ToInt32(trozos[2]);
                                 int partida8_5 = Convert.ToInt32(trozos[3]);
                                 if (juego8_5 == 0)
@@ -584,8 +600,11 @@ namespace WindowsFormsApplication1
                             break;
                         case 18:
                             int dep = Convert.ToInt32(trozos[1]);
-                            DelegadoDeposito delegadoD18 = new DelegadoDeposito(actualizar_deposito);
-                            this.Invoke(delegadoD18, new object[] { dep });
+                            if (dep != -1)
+                            {
+                                DelegadoDeposito delegadoD18 = new DelegadoDeposito(actualizar_deposito);
+                                this.Invoke(delegadoD18, new object[] { dep });
+                            }
                             int hack18 = Convert.ToInt32(trozos[2]);
                             if (hack18 == 1)
                             {
@@ -607,11 +626,11 @@ namespace WindowsFormsApplication1
                                 break;
                             }
                             break;
-                        case 19:
+                        case 19:// recibimos en el poker que cartas deben haber en el tablero
                             int partida_19 = Convert.ToInt32(trozos[1]);
                             int ronda = Convert.ToInt32(trozos[2]);
                             string [] cartas_19;
-                            if (ronda == 0)
+                            if (ronda == 0) // tres cartas para el flop
                             {
                                 cartas_19 = new string[6];
                                 for(int i_19=0;i_19<6;i_19++)
@@ -619,7 +638,7 @@ namespace WindowsFormsApplication1
                                     cartas_19[i_19] = trozos[i_19 + 3];
                                 }
                             }
-                            else if (ronda == 1)
+                            else if (ronda == 1) //una carta para el river
                             {
                                 cartas_19 = new string[2]; 
                                 for (int i_19 = 0; i_19 < 2; i_19++)
@@ -627,7 +646,7 @@ namespace WindowsFormsApplication1
                                     cartas_19[i_19] = trozos[i_19 + 3];
                                 }
                             }
-                            else 
+                            else // una carta para el trun
                             {
                                 cartas_19 = new string[2];
                                 for (int i_19 = 0; i_19 < 2; i_19++)
@@ -638,6 +657,38 @@ namespace WindowsFormsApplication1
                             DelegadoParaEnviarCartasMesaPoker delegado_19 = new DelegadoParaEnviarCartasMesaPoker(EnviarCartasMesaPoker);
                             this.Invoke(delegado_19, new object[] { partida_19, ronda, cartas_19 });
 
+                            break;
+
+                        case 20: // recibimos quienes han sido los ganadores de poker después de haber comparado sus manos.
+                            int partida_20 = Convert.ToInt32(trozos[1]);
+                            int num_ganadores = Convert.ToInt32(trozos[2]);
+                            string[] winners = new string[num_ganadores];
+                            for (int i_20 = 0; i_20 < num_ganadores; i_20++)
+                            {
+                                winners[i_20] = trozos[i_20 + 3];
+                            }
+                            DelegadoParaFinalizarPartidaPoker delegado_20 = new DelegadoParaFinalizarPartidaPoker(FinalizarPartidaPoker);
+                            this.Invoke(delegado_20, new object[] { partida_20, num_ganadores, winners });
+                            break;
+                        case 21://respuesta a la consulta de apuestas
+                            int codigo21 = Convert.ToInt32(trozos[1]);
+                            switch (codigo21)
+                            {
+                                case 0://respuesta que no hay apuestas
+                                    MessageBox.Show(trozos[2]);
+                                    break;
+                                case 1://tenemos el porcentaje
+                                    int total = Convert.ToInt32(trozos[2]);
+                                    int acertadas = Convert.ToInt32(trozos[3]);
+                                    DelegadoConsultaApuesta delegado21 = new DelegadoConsultaApuesta(EnviarRespuestaConsulta);
+                                    this.Invoke(delegado21, new object[] { total, acertadas, trozos[4] });
+                                    break;
+                            }
+                            break;
+                        case 22://recibimos los beneficios totales
+                            int beneficio22 = Convert.ToInt32(trozos[1]);
+                            DelegadoParaConsultaBeneficio delegado22= new DelegadoParaConsultaBeneficio (EnviarBeneficio);
+                            this.Invoke(delegado22, new object[]{beneficio22});
                             break;
                     }
                 }

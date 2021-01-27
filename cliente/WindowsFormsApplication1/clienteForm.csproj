@@ -65,6 +65,12 @@
     </Compile>
     <Compile Include="Card.cs" />
     <Compile Include="Deck.cs" />
+    <Compile Include="Estadísticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas.designer.cs">
+      <DependentUpon>Estadísticas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hand.cs" />
     <Compile Include="HandCombination.cs" />
     <Compile Include="Perfil.cs">
@@ -110,6 +116,9 @@
     <Compile Include="Table.cs" />
     <EmbeddedResource Include="Black_Jack.resx">
       <DependentUpon>Black_Jack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas.resx">
+      <DependentUpon>Estadísticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>
@@ -605,6 +614,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fichas_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_casino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruleta_estatica_sin_fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

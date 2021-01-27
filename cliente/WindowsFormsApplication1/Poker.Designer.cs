@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Poker));
-            this.label1 = new System.Windows.Forms.Label();
             this.hide_chat = new System.Windows.Forms.Button();
             this.main_chat = new System.Windows.Forms.RichTextBox();
             this.enviar_chat = new System.Windows.Forms.Button();
             this.chat_text = new System.Windows.Forms.TextBox();
             this.chat_background = new System.Windows.Forms.Panel();
-            this.Pot = new System.Windows.Forms.Label();
             this.amount_player5 = new System.Windows.Forms.RichTextBox();
             this.name_player5 = new System.Windows.Forms.RichTextBox();
             this.amount_player4 = new System.Windows.Forms.RichTextBox();
@@ -51,7 +49,25 @@
             this.Raise = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.user_name = new System.Windows.Forms.RichTextBox();
-            this.rol = new System.Windows.Forms.Label();
+            this.deposito_display = new System.Windows.Forms.RichTextBox();
+            this.apuesta_actual_player1 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_actual_player2 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_actual_player5 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_actual_player4 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_actual_player3 = new System.Windows.Forms.RichTextBox();
+            this.dinero_juego = new System.Windows.Forms.Panel();
+            this.total_pot = new System.Windows.Forms.RichTextBox();
+            this.pot_ui = new System.Windows.Forms.Label();
+            this.credit_1 = new System.Windows.Forms.RichTextBox();
+            this.credit_3 = new System.Windows.Forms.RichTextBox();
+            this.credit_2 = new System.Windows.Forms.RichTextBox();
+            this.credit_4 = new System.Windows.Forms.RichTextBox();
+            this.credit_5 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_1 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_4 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_3 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_2 = new System.Windows.Forms.RichTextBox();
+            this.apuesta_5 = new System.Windows.Forms.RichTextBox();
             this.image_player4 = new System.Windows.Forms.PictureBox();
             this.image_player3 = new System.Windows.Forms.PictureBox();
             this.player4_card1 = new System.Windows.Forms.PictureBox();
@@ -72,16 +88,9 @@
             this.card2 = new System.Windows.Forms.PictureBox();
             this.card1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.deposito_display = new System.Windows.Forms.RichTextBox();
-            this.apuesta_actual_player1 = new System.Windows.Forms.RichTextBox();
-            this.apuesta_actual_player2 = new System.Windows.Forms.RichTextBox();
-            this.apuesta_actual_player5 = new System.Windows.Forms.RichTextBox();
-            this.apuesta_actual_player4 = new System.Windows.Forms.RichTextBox();
-            this.apuesta_actual_player3 = new System.Windows.Forms.RichTextBox();
-            this.situation = new System.Windows.Forms.Label();
-            this.last_move = new System.Windows.Forms.Label();
             this.chat_background.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.increase_amount)).BeginInit();
+            this.dinero_juego.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image_player4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.image_player3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player4_card1)).BeginInit();
@@ -103,14 +112,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.card1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(923, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 0;
             // 
             // hide_chat
             // 
@@ -176,25 +177,15 @@
             this.chat_background.Size = new System.Drawing.Size(984, 150);
             this.chat_background.TabIndex = 4;
             // 
-            // Pot
-            // 
-            this.Pot.AutoSize = true;
-            this.Pot.ForeColor = System.Drawing.Color.White;
-            this.Pot.Location = new System.Drawing.Point(459, 103);
-            this.Pot.Name = "Pot";
-            this.Pot.Size = new System.Drawing.Size(26, 13);
-            this.Pot.TabIndex = 61;
-            this.Pot.Text = "Pot:";
-            // 
             // amount_player5
             // 
             this.amount_player5.BackColor = System.Drawing.Color.Black;
             this.amount_player5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.amount_player5.ForeColor = System.Drawing.Color.White;
-            this.amount_player5.Location = new System.Drawing.Point(709, 374);
+            this.amount_player5.Location = new System.Drawing.Point(784, 374);
             this.amount_player5.Name = "amount_player5";
             this.amount_player5.ReadOnly = true;
-            this.amount_player5.Size = new System.Drawing.Size(150, 40);
+            this.amount_player5.Size = new System.Drawing.Size(75, 40);
             this.amount_player5.TabIndex = 60;
             this.amount_player5.Text = "";
             this.amount_player5.Visible = false;
@@ -203,6 +194,7 @@
             // 
             this.name_player5.BackColor = System.Drawing.Color.Black;
             this.name_player5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_player5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name_player5.ForeColor = System.Drawing.Color.White;
             this.name_player5.Location = new System.Drawing.Point(709, 334);
             this.name_player5.Name = "name_player5";
@@ -217,10 +209,10 @@
             this.amount_player4.BackColor = System.Drawing.Color.Black;
             this.amount_player4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.amount_player4.ForeColor = System.Drawing.Color.White;
-            this.amount_player4.Location = new System.Drawing.Point(809, 100);
+            this.amount_player4.Location = new System.Drawing.Point(884, 100);
             this.amount_player4.Name = "amount_player4";
             this.amount_player4.ReadOnly = true;
-            this.amount_player4.Size = new System.Drawing.Size(150, 40);
+            this.amount_player4.Size = new System.Drawing.Size(75, 40);
             this.amount_player4.TabIndex = 57;
             this.amount_player4.Text = "";
             this.amount_player4.Visible = false;
@@ -229,6 +221,7 @@
             // 
             this.name_player4.BackColor = System.Drawing.Color.Black;
             this.name_player4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_player4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name_player4.ForeColor = System.Drawing.Color.White;
             this.name_player4.Location = new System.Drawing.Point(809, 60);
             this.name_player4.Name = "name_player4";
@@ -243,10 +236,10 @@
             this.amount_player3.BackColor = System.Drawing.Color.Black;
             this.amount_player3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.amount_player3.ForeColor = System.Drawing.Color.White;
-            this.amount_player3.Location = new System.Drawing.Point(119, 100);
+            this.amount_player3.Location = new System.Drawing.Point(163, 100);
             this.amount_player3.Name = "amount_player3";
             this.amount_player3.ReadOnly = true;
-            this.amount_player3.Size = new System.Drawing.Size(150, 40);
+            this.amount_player3.Size = new System.Drawing.Size(75, 40);
             this.amount_player3.TabIndex = 54;
             this.amount_player3.Text = "";
             this.amount_player3.Visible = false;
@@ -255,8 +248,9 @@
             // 
             this.name_player3.BackColor = System.Drawing.Color.Black;
             this.name_player3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_player3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name_player3.ForeColor = System.Drawing.Color.White;
-            this.name_player3.Location = new System.Drawing.Point(119, 60);
+            this.name_player3.Location = new System.Drawing.Point(88, 60);
             this.name_player3.Name = "name_player3";
             this.name_player3.ReadOnly = true;
             this.name_player3.Size = new System.Drawing.Size(150, 40);
@@ -269,10 +263,10 @@
             this.amount_player2.BackColor = System.Drawing.Color.Black;
             this.amount_player2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.amount_player2.ForeColor = System.Drawing.Color.White;
-            this.amount_player2.Location = new System.Drawing.Point(200, 374);
+            this.amount_player2.Location = new System.Drawing.Point(275, 374);
             this.amount_player2.Name = "amount_player2";
             this.amount_player2.ReadOnly = true;
-            this.amount_player2.Size = new System.Drawing.Size(150, 40);
+            this.amount_player2.Size = new System.Drawing.Size(75, 40);
             this.amount_player2.TabIndex = 51;
             this.amount_player2.Text = "";
             this.amount_player2.Visible = false;
@@ -297,7 +291,7 @@
             this.amount.BackColor = System.Drawing.Color.Black;
             this.amount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.amount.ForeColor = System.Drawing.Color.White;
-            this.amount.Location = new System.Drawing.Point(656, 494);
+            this.amount.Location = new System.Drawing.Point(897, 436);
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(79, 13);
             this.amount.TabIndex = 48;
@@ -307,6 +301,7 @@
             // 
             // increase_amount
             // 
+            this.increase_amount.BackColor = System.Drawing.Color.Black;
             this.increase_amount.Cursor = System.Windows.Forms.Cursors.Default;
             this.increase_amount.Location = new System.Drawing.Point(741, 462);
             this.increase_amount.Name = "increase_amount";
@@ -335,7 +330,7 @@
             this.Fold.BackColor = System.Drawing.Color.Red;
             this.Fold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Fold.ForeColor = System.Drawing.Color.White;
-            this.Fold.Location = new System.Drawing.Point(0, 516);
+            this.Fold.Location = new System.Drawing.Point(-1, 516);
             this.Fold.Name = "Fold";
             this.Fold.Size = new System.Drawing.Size(328, 45);
             this.Fold.TabIndex = 45;
@@ -379,14 +374,252 @@
             this.user_name.TabIndex = 74;
             this.user_name.Text = "";
             // 
-            // rol
+            // deposito_display
             // 
-            this.rol.AutoSize = true;
-            this.rol.Location = new System.Drawing.Point(44, 482);
-            this.rol.Name = "rol";
-            this.rol.Size = new System.Drawing.Size(32, 13);
-            this.rol.TabIndex = 75;
-            this.rol.Text = "ROL:";
+            this.deposito_display.BackColor = System.Drawing.Color.Black;
+            this.deposito_display.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.deposito_display.ForeColor = System.Drawing.Color.White;
+            this.deposito_display.Location = new System.Drawing.Point(487, 409);
+            this.deposito_display.Name = "deposito_display";
+            this.deposito_display.ReadOnly = true;
+            this.deposito_display.Size = new System.Drawing.Size(75, 40);
+            this.deposito_display.TabIndex = 77;
+            this.deposito_display.Text = "";
+            // 
+            // apuesta_actual_player1
+            // 
+            this.apuesta_actual_player1.BackColor = System.Drawing.Color.Black;
+            this.apuesta_actual_player1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_actual_player1.ForeColor = System.Drawing.Color.White;
+            this.apuesta_actual_player1.Location = new System.Drawing.Point(487, 455);
+            this.apuesta_actual_player1.Name = "apuesta_actual_player1";
+            this.apuesta_actual_player1.ReadOnly = true;
+            this.apuesta_actual_player1.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_actual_player1.TabIndex = 78;
+            this.apuesta_actual_player1.Text = "";
+            // 
+            // apuesta_actual_player2
+            // 
+            this.apuesta_actual_player2.BackColor = System.Drawing.Color.Black;
+            this.apuesta_actual_player2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_actual_player2.ForeColor = System.Drawing.Color.White;
+            this.apuesta_actual_player2.Location = new System.Drawing.Point(275, 420);
+            this.apuesta_actual_player2.Name = "apuesta_actual_player2";
+            this.apuesta_actual_player2.ReadOnly = true;
+            this.apuesta_actual_player2.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_actual_player2.TabIndex = 79;
+            this.apuesta_actual_player2.Text = "";
+            this.apuesta_actual_player2.Visible = false;
+            // 
+            // apuesta_actual_player5
+            // 
+            this.apuesta_actual_player5.BackColor = System.Drawing.Color.Black;
+            this.apuesta_actual_player5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_actual_player5.ForeColor = System.Drawing.Color.White;
+            this.apuesta_actual_player5.Location = new System.Drawing.Point(779, 420);
+            this.apuesta_actual_player5.Name = "apuesta_actual_player5";
+            this.apuesta_actual_player5.ReadOnly = true;
+            this.apuesta_actual_player5.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_actual_player5.TabIndex = 80;
+            this.apuesta_actual_player5.Text = "";
+            this.apuesta_actual_player5.Visible = false;
+            // 
+            // apuesta_actual_player4
+            // 
+            this.apuesta_actual_player4.BackColor = System.Drawing.Color.Black;
+            this.apuesta_actual_player4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_actual_player4.ForeColor = System.Drawing.Color.White;
+            this.apuesta_actual_player4.Location = new System.Drawing.Point(884, 146);
+            this.apuesta_actual_player4.Name = "apuesta_actual_player4";
+            this.apuesta_actual_player4.ReadOnly = true;
+            this.apuesta_actual_player4.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_actual_player4.TabIndex = 81;
+            this.apuesta_actual_player4.Text = "";
+            this.apuesta_actual_player4.Visible = false;
+            // 
+            // apuesta_actual_player3
+            // 
+            this.apuesta_actual_player3.BackColor = System.Drawing.Color.Black;
+            this.apuesta_actual_player3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_actual_player3.ForeColor = System.Drawing.Color.White;
+            this.apuesta_actual_player3.Location = new System.Drawing.Point(163, 146);
+            this.apuesta_actual_player3.Name = "apuesta_actual_player3";
+            this.apuesta_actual_player3.ReadOnly = true;
+            this.apuesta_actual_player3.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_actual_player3.TabIndex = 82;
+            this.apuesta_actual_player3.Text = "";
+            this.apuesta_actual_player3.Visible = false;
+            // 
+            // dinero_juego
+            // 
+            this.dinero_juego.BackColor = System.Drawing.Color.Gold;
+            this.dinero_juego.Controls.Add(this.total_pot);
+            this.dinero_juego.Controls.Add(this.pot_ui);
+            this.dinero_juego.Location = new System.Drawing.Point(412, 12);
+            this.dinero_juego.Name = "dinero_juego";
+            this.dinero_juego.Size = new System.Drawing.Size(150, 88);
+            this.dinero_juego.TabIndex = 85;
+            // 
+            // total_pot
+            // 
+            this.total_pot.BackColor = System.Drawing.Color.Gold;
+            this.total_pot.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.total_pot.ForeColor = System.Drawing.Color.Black;
+            this.total_pot.Location = new System.Drawing.Point(32, 37);
+            this.total_pot.Name = "total_pot";
+            this.total_pot.ReadOnly = true;
+            this.total_pot.Size = new System.Drawing.Size(89, 45);
+            this.total_pot.TabIndex = 83;
+            this.total_pot.Text = "";
+            // 
+            // pot_ui
+            // 
+            this.pot_ui.AutoSize = true;
+            this.pot_ui.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pot_ui.ForeColor = System.Drawing.Color.Black;
+            this.pot_ui.Location = new System.Drawing.Point(29, 8);
+            this.pot_ui.Name = "pot_ui";
+            this.pot_ui.Size = new System.Drawing.Size(92, 16);
+            this.pot_ui.TabIndex = 1;
+            this.pot_ui.Text = "TOTAL POT";
+            // 
+            // credit_1
+            // 
+            this.credit_1.BackColor = System.Drawing.Color.Black;
+            this.credit_1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.credit_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.credit_1.ForeColor = System.Drawing.Color.White;
+            this.credit_1.Location = new System.Drawing.Point(413, 409);
+            this.credit_1.Name = "credit_1";
+            this.credit_1.ReadOnly = true;
+            this.credit_1.Size = new System.Drawing.Size(75, 40);
+            this.credit_1.TabIndex = 86;
+            this.credit_1.Text = "Crédito:";
+            // 
+            // credit_3
+            // 
+            this.credit_3.BackColor = System.Drawing.Color.Black;
+            this.credit_3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.credit_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.credit_3.ForeColor = System.Drawing.Color.White;
+            this.credit_3.Location = new System.Drawing.Point(88, 100);
+            this.credit_3.Name = "credit_3";
+            this.credit_3.ReadOnly = true;
+            this.credit_3.Size = new System.Drawing.Size(75, 40);
+            this.credit_3.TabIndex = 87;
+            this.credit_3.Text = "Crédito:";
+            this.credit_3.Visible = false;
+            // 
+            // credit_2
+            // 
+            this.credit_2.BackColor = System.Drawing.Color.Black;
+            this.credit_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.credit_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.credit_2.ForeColor = System.Drawing.Color.White;
+            this.credit_2.Location = new System.Drawing.Point(201, 374);
+            this.credit_2.Name = "credit_2";
+            this.credit_2.ReadOnly = true;
+            this.credit_2.Size = new System.Drawing.Size(75, 40);
+            this.credit_2.TabIndex = 88;
+            this.credit_2.Text = "Crédito:";
+            this.credit_2.Visible = false;
+            // 
+            // credit_4
+            // 
+            this.credit_4.BackColor = System.Drawing.Color.Black;
+            this.credit_4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.credit_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.credit_4.ForeColor = System.Drawing.Color.White;
+            this.credit_4.Location = new System.Drawing.Point(809, 100);
+            this.credit_4.Name = "credit_4";
+            this.credit_4.ReadOnly = true;
+            this.credit_4.Size = new System.Drawing.Size(75, 40);
+            this.credit_4.TabIndex = 89;
+            this.credit_4.Text = "Crédito:";
+            this.credit_4.Visible = false;
+            // 
+            // credit_5
+            // 
+            this.credit_5.BackColor = System.Drawing.Color.Black;
+            this.credit_5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.credit_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.credit_5.ForeColor = System.Drawing.Color.White;
+            this.credit_5.Location = new System.Drawing.Point(709, 374);
+            this.credit_5.Name = "credit_5";
+            this.credit_5.ReadOnly = true;
+            this.credit_5.Size = new System.Drawing.Size(75, 40);
+            this.credit_5.TabIndex = 90;
+            this.credit_5.Text = "Crédito:";
+            this.credit_5.Visible = false;
+            // 
+            // apuesta_1
+            // 
+            this.apuesta_1.BackColor = System.Drawing.Color.Black;
+            this.apuesta_1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apuesta_1.ForeColor = System.Drawing.Color.White;
+            this.apuesta_1.Location = new System.Drawing.Point(413, 455);
+            this.apuesta_1.Name = "apuesta_1";
+            this.apuesta_1.ReadOnly = true;
+            this.apuesta_1.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_1.TabIndex = 91;
+            this.apuesta_1.Text = "Apuesta:";
+            // 
+            // apuesta_4
+            // 
+            this.apuesta_4.BackColor = System.Drawing.Color.Black;
+            this.apuesta_4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apuesta_4.ForeColor = System.Drawing.Color.White;
+            this.apuesta_4.Location = new System.Drawing.Point(809, 146);
+            this.apuesta_4.Name = "apuesta_4";
+            this.apuesta_4.ReadOnly = true;
+            this.apuesta_4.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_4.TabIndex = 92;
+            this.apuesta_4.Text = "Apuesta:";
+            this.apuesta_4.Visible = false;
+            // 
+            // apuesta_3
+            // 
+            this.apuesta_3.BackColor = System.Drawing.Color.Black;
+            this.apuesta_3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apuesta_3.ForeColor = System.Drawing.Color.White;
+            this.apuesta_3.Location = new System.Drawing.Point(93, 146);
+            this.apuesta_3.Name = "apuesta_3";
+            this.apuesta_3.ReadOnly = true;
+            this.apuesta_3.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_3.TabIndex = 93;
+            this.apuesta_3.Text = "Apuesta:";
+            this.apuesta_3.Visible = false;
+            // 
+            // apuesta_2
+            // 
+            this.apuesta_2.BackColor = System.Drawing.Color.Black;
+            this.apuesta_2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apuesta_2.ForeColor = System.Drawing.Color.White;
+            this.apuesta_2.Location = new System.Drawing.Point(200, 420);
+            this.apuesta_2.Name = "apuesta_2";
+            this.apuesta_2.ReadOnly = true;
+            this.apuesta_2.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_2.TabIndex = 94;
+            this.apuesta_2.Text = "Apuesta:";
+            this.apuesta_2.Visible = false;
+            // 
+            // apuesta_5
+            // 
+            this.apuesta_5.BackColor = System.Drawing.Color.Black;
+            this.apuesta_5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.apuesta_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apuesta_5.ForeColor = System.Drawing.Color.White;
+            this.apuesta_5.Location = new System.Drawing.Point(709, 420);
+            this.apuesta_5.Name = "apuesta_5";
+            this.apuesta_5.ReadOnly = true;
+            this.apuesta_5.Size = new System.Drawing.Size(75, 40);
+            this.apuesta_5.TabIndex = 95;
+            this.apuesta_5.Text = "Apuesta:";
+            this.apuesta_5.Visible = false;
             // 
             // image_player4
             // 
@@ -403,7 +636,7 @@
             // 
             this.image_player3.BackColor = System.Drawing.Color.Black;
             this.image_player3.Image = global::WindowsFormsApplication1.Properties.Resources.person_icon3;
-            this.image_player3.Location = new System.Drawing.Point(47, 60);
+            this.image_player3.Location = new System.Drawing.Point(16, 60);
             this.image_player3.Name = "image_player3";
             this.image_player3.Size = new System.Drawing.Size(75, 80);
             this.image_player3.TabIndex = 52;
@@ -433,7 +666,7 @@
             // player3_card2
             // 
             this.player3_card2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player3_card2.BackgroundImage")));
-            this.player3_card2.Location = new System.Drawing.Point(124, 20);
+            this.player3_card2.Location = new System.Drawing.Point(93, 20);
             this.player3_card2.Name = "player3_card2";
             this.player3_card2.Size = new System.Drawing.Size(71, 96);
             this.player3_card2.TabIndex = 71;
@@ -443,7 +676,7 @@
             // player3_card1
             // 
             this.player3_card1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player3_card1.BackgroundImage")));
-            this.player3_card1.Location = new System.Drawing.Point(47, 20);
+            this.player3_card1.Location = new System.Drawing.Point(16, 20);
             this.player3_card1.Name = "player3_card1";
             this.player3_card1.Size = new System.Drawing.Size(71, 96);
             this.player3_card1.TabIndex = 70;
@@ -577,6 +810,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.mesa_poker;
             this.pictureBox1.Location = new System.Drawing.Point(112, 49);
             this.pictureBox1.Name = "pictureBox1";
@@ -584,101 +818,22 @@
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
-            // deposito_display
-            // 
-            this.deposito_display.BackColor = System.Drawing.Color.Black;
-            this.deposito_display.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.deposito_display.ForeColor = System.Drawing.Color.White;
-            this.deposito_display.Location = new System.Drawing.Point(412, 409);
-            this.deposito_display.Name = "deposito_display";
-            this.deposito_display.Size = new System.Drawing.Size(150, 40);
-            this.deposito_display.TabIndex = 77;
-            this.deposito_display.Text = "";
-            // 
-            // apuesta_actual_player1
-            // 
-            this.apuesta_actual_player1.BackColor = System.Drawing.Color.Black;
-            this.apuesta_actual_player1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.apuesta_actual_player1.ForeColor = System.Drawing.Color.White;
-            this.apuesta_actual_player1.Location = new System.Drawing.Point(453, 455);
-            this.apuesta_actual_player1.Name = "apuesta_actual_player1";
-            this.apuesta_actual_player1.Size = new System.Drawing.Size(75, 40);
-            this.apuesta_actual_player1.TabIndex = 78;
-            this.apuesta_actual_player1.Text = "";
-            // 
-            // apuesta_actual_player2
-            // 
-            this.apuesta_actual_player2.BackColor = System.Drawing.Color.Black;
-            this.apuesta_actual_player2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.apuesta_actual_player2.ForeColor = System.Drawing.Color.White;
-            this.apuesta_actual_player2.Location = new System.Drawing.Point(128, 420);
-            this.apuesta_actual_player2.Name = "apuesta_actual_player2";
-            this.apuesta_actual_player2.Size = new System.Drawing.Size(75, 40);
-            this.apuesta_actual_player2.TabIndex = 79;
-            this.apuesta_actual_player2.Text = "";
-            this.apuesta_actual_player2.Visible = false;
-            // 
-            // apuesta_actual_player5
-            // 
-            this.apuesta_actual_player5.BackColor = System.Drawing.Color.Black;
-            this.apuesta_actual_player5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.apuesta_actual_player5.ForeColor = System.Drawing.Color.White;
-            this.apuesta_actual_player5.Location = new System.Drawing.Point(637, 420);
-            this.apuesta_actual_player5.Name = "apuesta_actual_player5";
-            this.apuesta_actual_player5.Size = new System.Drawing.Size(75, 40);
-            this.apuesta_actual_player5.TabIndex = 80;
-            this.apuesta_actual_player5.Text = "";
-            this.apuesta_actual_player5.Visible = false;
-            // 
-            // apuesta_actual_player4
-            // 
-            this.apuesta_actual_player4.BackColor = System.Drawing.Color.Black;
-            this.apuesta_actual_player4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.apuesta_actual_player4.ForeColor = System.Drawing.Color.White;
-            this.apuesta_actual_player4.Location = new System.Drawing.Point(737, 146);
-            this.apuesta_actual_player4.Name = "apuesta_actual_player4";
-            this.apuesta_actual_player4.Size = new System.Drawing.Size(75, 40);
-            this.apuesta_actual_player4.TabIndex = 81;
-            this.apuesta_actual_player4.Text = "";
-            this.apuesta_actual_player4.Visible = false;
-            // 
-            // apuesta_actual_player3
-            // 
-            this.apuesta_actual_player3.BackColor = System.Drawing.Color.Black;
-            this.apuesta_actual_player3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.apuesta_actual_player3.ForeColor = System.Drawing.Color.White;
-            this.apuesta_actual_player3.Location = new System.Drawing.Point(47, 146);
-            this.apuesta_actual_player3.Name = "apuesta_actual_player3";
-            this.apuesta_actual_player3.Size = new System.Drawing.Size(75, 40);
-            this.apuesta_actual_player3.TabIndex = 82;
-            this.apuesta_actual_player3.Text = "";
-            this.apuesta_actual_player3.Visible = false;
-            // 
-            // situation
-            // 
-            this.situation.AutoSize = true;
-            this.situation.Location = new System.Drawing.Point(459, 14);
-            this.situation.Name = "situation";
-            this.situation.Size = new System.Drawing.Size(35, 13);
-            this.situation.TabIndex = 83;
-            this.situation.Text = "label3";
-            // 
-            // last_move
-            // 
-            this.last_move.AutoSize = true;
-            this.last_move.Location = new System.Drawing.Point(868, 146);
-            this.last_move.Name = "last_move";
-            this.last_move.Size = new System.Drawing.Size(35, 13);
-            this.last_move.TabIndex = 84;
-            this.last_move.Text = "label3";
-            // 
             // Poker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 711);
-            this.Controls.Add(this.last_move);
-            this.Controls.Add(this.situation);
+            this.Controls.Add(this.apuesta_5);
+            this.Controls.Add(this.apuesta_2);
+            this.Controls.Add(this.apuesta_3);
+            this.Controls.Add(this.apuesta_4);
+            this.Controls.Add(this.apuesta_1);
+            this.Controls.Add(this.credit_5);
+            this.Controls.Add(this.credit_4);
+            this.Controls.Add(this.credit_2);
+            this.Controls.Add(this.credit_3);
+            this.Controls.Add(this.credit_1);
+            this.Controls.Add(this.dinero_juego);
             this.Controls.Add(this.apuesta_actual_player3);
             this.Controls.Add(this.apuesta_actual_player4);
             this.Controls.Add(this.apuesta_actual_player5);
@@ -687,7 +842,6 @@
             this.Controls.Add(this.check_call);
             this.Controls.Add(this.apuesta_actual_player1);
             this.Controls.Add(this.deposito_display);
-            this.Controls.Add(this.rol);
             this.Controls.Add(this.user_name);
             this.Controls.Add(this.amount_player4);
             this.Controls.Add(this.name_player4);
@@ -709,7 +863,6 @@
             this.Controls.Add(this.name_player2);
             this.Controls.Add(this.player2_card2);
             this.Controls.Add(this.player2_card1);
-            this.Controls.Add(this.Pot);
             this.Controls.Add(this.amount);
             this.Controls.Add(this.increase_amount);
             this.Controls.Add(this.Fold);
@@ -723,15 +876,15 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chat_background);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(984, 561);
             this.Name = "Poker";
-            this.Text = " ";
             this.Load += new System.EventHandler(this.poker_Load);
             this.chat_background.ResumeLayout(false);
             this.chat_background.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.increase_amount)).EndInit();
+            this.dinero_juego.ResumeLayout(false);
+            this.dinero_juego.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.image_player4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.image_player3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player4_card1)).EndInit();
@@ -759,13 +912,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button hide_chat;
         private System.Windows.Forms.RichTextBox main_chat;
         private System.Windows.Forms.Button enviar_chat;
         private System.Windows.Forms.TextBox chat_text;
         private System.Windows.Forms.Panel chat_background;
-        private System.Windows.Forms.Label Pot;
         private System.Windows.Forms.RichTextBox amount_player5;
         private System.Windows.Forms.RichTextBox name_player5;
         private System.Windows.Forms.PictureBox image_player5;
@@ -801,15 +952,25 @@
         private System.Windows.Forms.PictureBox player4_card2;
         private System.Windows.Forms.PictureBox player4_card1;
         private System.Windows.Forms.RichTextBox user_name;
-        private System.Windows.Forms.Label rol;
         private System.Windows.Forms.RichTextBox deposito_display;
         private System.Windows.Forms.RichTextBox apuesta_actual_player1;
         private System.Windows.Forms.RichTextBox apuesta_actual_player2;
         private System.Windows.Forms.RichTextBox apuesta_actual_player5;
         private System.Windows.Forms.RichTextBox apuesta_actual_player4;
         private System.Windows.Forms.RichTextBox apuesta_actual_player3;
-        private System.Windows.Forms.Label situation;
-        private System.Windows.Forms.Label last_move;
+        private System.Windows.Forms.Panel dinero_juego;
+        private System.Windows.Forms.Label pot_ui;
+        private System.Windows.Forms.RichTextBox credit_1;
+        private System.Windows.Forms.RichTextBox credit_3;
+        private System.Windows.Forms.RichTextBox credit_2;
+        private System.Windows.Forms.RichTextBox credit_4;
+        private System.Windows.Forms.RichTextBox credit_5;
+        private System.Windows.Forms.RichTextBox apuesta_1;
+        private System.Windows.Forms.RichTextBox apuesta_4;
+        private System.Windows.Forms.RichTextBox apuesta_3;
+        private System.Windows.Forms.RichTextBox apuesta_2;
+        private System.Windows.Forms.RichTextBox apuesta_5;
+        private System.Windows.Forms.RichTextBox total_pot;
 
     }
 }

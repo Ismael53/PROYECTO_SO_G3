@@ -11,6 +11,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Perfil : Form
     {
+        Estadísticas Estadisticas;
         public int deposito;
         public string usuario;
         public delegate void delegadoingreso(string mensaje);
@@ -40,10 +41,21 @@ namespace WindowsFormsApplication1
         {
             if (ingreso.Text != "")
             {
-                string mensaje1 = "";
-                mensaje1 = "12/" + usuario + "/" + ingreso.Text;
-                
-                message_ingreso(mensaje1);
+                try
+                {
+                    int ig = Convert.ToInt32(ingreso.Text);
+                    string mensaje1 = "";
+                    mensaje1 = "12/" + usuario + "/" + ingreso.Text;
+
+                    message_ingreso(mensaje1);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Introduzca un valor numérico por favor");
+                    ingreso.Text = "";
+
+                }
+
             }
             else
                 MessageBox.Show("Introduzca una cantidad");
@@ -112,9 +124,28 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        
+        public void sendmessage(string mensaje)
         {
+            message_out(mensaje);
+        }
+        private void estadisticas_Click(object sender, EventArgs e)
+        {
+            Estadisticas = new Estadísticas();
+            Estadisticas.message_consulta += new Estadísticas.delegadoConsulta(sendmessage);
+            Estadisticas.usuario = usuario;
+            Estadisticas.limpiarLabel();
+            Estadisticas.ShowDialog();
 
+        }
+        public void EnviarRespuestaConsultaApuesta(int total, int acertadas, int porcentaje, string apuesta)
+        {
+            Estadisticas.RecibirResultadoConsulta(total, acertadas, porcentaje, apuesta);
+
+        }
+        public void EnviarBeneficio(int beneficios)
+        {
+            Estadisticas.RecibirBeneficio(beneficios);
         }
     }
 }

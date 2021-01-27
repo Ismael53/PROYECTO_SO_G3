@@ -22,6 +22,7 @@ namespace WindowsFormsApplication1
         protected string message;
         protected string simplifiedMessage;
         public bool isbusted;
+        public bool fold=false;
         //various propeties
         public string Name
         {
